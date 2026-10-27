@@ -2,7 +2,7 @@
 # Every save commits to `main`, which triggers the Pages workflow and redeploys the site.
 backend:
   name: github
-  repo: sajjadpsh/spectre-m4
+  repo: sajjadpsh/sajjadpsh.github.io
   branch: main
   commit_messages:
     update: 'content: update {{path}}'
