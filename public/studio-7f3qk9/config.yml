@@ -54,6 +54,7 @@ collections:
               - { name: contact, label: Contact heading, widget: string }
               - { name: visit, label: Visit project link, widget: string }
               - { name: rights, label: Copyright text, widget: string }
+              - { name: backToTop, label: Back-to-top button, widget: string }
               - { name: skip, label: Skip link, widget: string }
 
           - name: profile

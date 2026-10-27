@@ -13,6 +13,8 @@ five languages (English at `/`, then `/fa`, `/ar`, `/de`, `/fr`; RTL for fa/ar) 
 | Languages | `src/lib/i18n.ts` (+ `locales` in the CMS config) |
 | Page shell + SEO metadata | `src/components/LocalePage.tsx` |
 | Section renderers | `src/components/Sections.tsx` |
+| Smooth scroll (Lenis) + back-to-top | `src/components/SmoothScroll.tsx` |
+| GSAP choreography (`data-hero`, `data-reveal`, `data-stagger`, `data-line`…) | `src/components/Animations.tsx` |
 | Résumé generator (PDF / DOCX) | `src/lib/resume/` |
 | Hidden content editor | `public/studio-7f3qk9/` → `https://<site>/studio-7f3qk9/` |
 | Logo / favicon | `src/components/Logo.tsx`, `src/app/icon.svg` |

@@ -10,10 +10,13 @@ function Body({ section, intl, ui }: { section: SectionData } & Ctx) {
   switch (section.type) {
     case 'timeline':
       return (
-        <ol className="relative space-y-10 border-s border-zinc-200 ps-6 dark:border-zinc-800">
+        <div className="relative ps-6">
+          <span aria-hidden="true" className="absolute inset-y-0 start-0 w-px bg-zinc-200 dark:bg-zinc-800" />
+          <span aria-hidden="true" data-line className="absolute inset-y-0 start-0 w-px origin-top bg-gradient-to-b from-indigo-500 via-cyan-500 to-purple-500" />
+          <ol className="space-y-10">
           {section.items.map((item, i) => (
             <li key={i} data-reveal className="relative">
-              <span className="absolute -start-[31px] top-1.5 size-3 rounded-full bg-gradient-to-br from-indigo-500 to-cyan-500 ring-4 ring-white dark:ring-zinc-950" />
+              <span data-dot className="absolute -start-[30px] top-1.5 size-3 rounded-full bg-gradient-to-br from-indigo-500 to-cyan-500 ring-4 ring-white dark:ring-zinc-950" />
               <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
                 <h3 className="text-lg font-semibold">{item.title}</h3>
                 <span className="text-sm text-zinc-500 tabular-nums">{formatPeriod(item.start, item.end, intl, ui.present)}</span>
@@ -28,13 +31,14 @@ function Body({ section, intl, ui }: { section: SectionData } & Ctx) {
               ) : null}
             </li>
           ))}
-        </ol>
+          </ol>
+        </div>
       );
     case 'projects':
       return (
-        <div className="grid gap-6 sm:grid-cols-2">
+        <div data-stagger className="grid gap-6 sm:grid-cols-2">
           {section.items.map((p) => (
-            <div key={p.url} data-reveal>
+            <div key={p.url}>
               <GlowCard className="h-full">
                 <h3 className="text-xl font-semibold">
                   <a href={p.url} target="_blank" rel="noopener noreferrer" className="after:absolute after:inset-0">
@@ -64,7 +68,7 @@ function Body({ section, intl, ui }: { section: SectionData } & Ctx) {
           {section.groups.map((g) => (
             <div key={g.label} data-reveal>
               <h3 className="mb-3 font-semibold">{g.label}</h3>
-              <ul className="flex flex-wrap gap-2">
+              <ul data-stagger className="flex flex-wrap gap-2">
                 {g.items.map((s) => (
                   <li key={s} className="chip">
                     {s}
