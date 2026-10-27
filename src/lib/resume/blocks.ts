@@ -13,7 +13,7 @@ export type Block =
 export function toBlocks({ profile, ui, sections }: Content, intl: string): Block[] {
   const contact = [profile.location, profile.email, profile.phone, ...profile.links.map((l) => l.url)];
   const blocks: Block[] = [
-    { kind: 'name', text: profile.name },
+    { kind: 'name', text: profile.resumeName || profile.name },
     { kind: 'para', text: profile.headline },
     { kind: 'para', text: contact.filter(Boolean).join(' | ') },
     { kind: 'heading', text: ui.summary.toUpperCase() },

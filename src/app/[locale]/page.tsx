@@ -1,58 +1,33 @@
+import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { getContent, isLocale, localeInfo } from '@/lib/i18n';
-import { SITE_URL } from '@/lib/site';
-import Header from '@/components/Header';
-import Hero from '@/components/Hero';
-import Section from '@/components/Sections';
-import Footer from '@/components/Footer';
-import ResumeDownload from '@/components/ResumeDownload';
-import SmoothScroll from '@/components/SmoothScroll';
+import LocalePage, { localeMetadata } from '@/components/LocalePage';
+import { defaultLocale, isLocale, locales } from '@/lib/i18n';
+import { BASE_PATH, SITE_URL } from '@/lib/site';
 
-export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
+type Props = { params: Promise<{ locale: string }> };
+
+export const dynamicParams = false;
+// The default locale is generated too, only to redirect old "/en" links to "/".
+export const generateStaticParams = () => locales.map((locale) => ({ locale }));
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  if (!isLocale(locale)) return {};
+  return locale === defaultLocale ? { alternates: { canonical: `${SITE_URL}/` } } : localeMetadata(locale);
+}
+
+export default async function Page({ params }: Props) {
   const { locale } = await params;
   if (!isLocale(locale)) notFound();
-  const content = getContent(locale);
-  const { profile, ui } = content;
-  const sections = content.sections.filter((s) => !s.hidden);
-  const info = localeInfo[locale];
-  // The PDF uses built-in Latin fonts, so non-Latin pages get the English résumé.
-  const pdfLocale = info.latin ? locale : 'en';
-
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'Person',
-    name: profile.name,
-    jobTitle: profile.headline,
-    email: `mailto:${profile.email}`,
-    url: `${SITE_URL}/${locale}/`,
-    address: { '@type': 'PostalAddress', addressLocality: profile.location },
-    sameAs: profile.links.map((l) => l.url),
-  };
-
+  if (locale !== defaultLocale) return <LocalePage locale={locale} />;
   return (
-    <>
-      <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:start-2 focus:z-50 focus:rounded focus:bg-white focus:p-2 focus:text-black">
-        {ui.skip}
-      </a>
-      <Header locale={locale} name={profile.name} ui={ui} nav={[...sections.map(({ id, title }) => ({ id, title })), { id: 'contact', title: ui.contact }]} />
-      <main id="main">
-        <Hero profile={profile}>
-          <ResumeDownload
-            ui={ui}
-            content={content}
-            pdfContent={getContent(pdfLocale)}
-            intl={info.intl}
-            pdfIntl={localeInfo[pdfLocale].intl}
-            rtl={info.dir === 'rtl'}
-          />
-        </Hero>
-        {sections.map((s) => (
-          <Section key={s.id} section={s} intl={info.intl} ui={ui} />
-        ))}
-      </main>
-      <Footer profile={profile} ui={ui} />
-      <SmoothScroll />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }} />
-    </>
+    <html lang={defaultLocale}>
+      <head>
+        <meta httpEquiv="refresh" content={`0; url=${BASE_PATH}/`} />
+      </head>
+      <body>
+        <a href={`${BASE_PATH}/`}>Continue</a>
+      </body>
+    </html>
   );
 }

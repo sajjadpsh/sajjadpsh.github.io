@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Seyedsajjad Pishvaeian — Développeur full stack & front-end",
-    "description": "Portfolio et CV de Seyedsajjad Pishvaeian, développeur full stack et front-end (Nuxt.js, Vue.js, Node.js, Laravel), diplômé en informatique de l'Université de technologie Amirkabir.",
+    "title": "Sajjad Pishvaeian Développeur full stack et ingénieur logiciel",
+    "description": "Portfolio et CV de Sajjad Pishvaeian, développeur full stack et front-end (Nuxt.js, Vue.js, Node.js, Laravel), diplômé en informatique de l'Université de technologie Amirkabir.",
     "keywords": ["Seyedsajjad Pishvaeian", "Sajjad Pishvaeian", "Développeur full stack", "Développeur front-end", "Nuxt.js", "Vue.js", "Node.js", "Laravel", "Portfolio", "CV"]
   },
   "ui": {
@@ -20,7 +20,8 @@
     "skip": "Aller au contenu"
   },
   "profile": {
-    "name": "Seyedsajjad Pishvaeian",
+    "name": "Sajjad Pishvaeian",
+    "resumeName": "Seyedsajjad Pishvaeian",
     "headline": "Développeur full stack & front-end",
     "summary": "Diplômé en informatique de l'Université de technologie Amirkabir, je conçois des applications web rapides et maintenables avec Nuxt.js, Vue.js, Node.js et Laravel — des tableaux de bord IoT aux plateformes logistiques et fintech. J'attache de l'importance aux interfaces claires, aux processus solides (BPMN, QA) et à l'amélioration continue.",
     "location": "Mashhad, Iran",

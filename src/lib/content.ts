@@ -4,6 +4,8 @@ export type Link = { label: string; url: string };
 
 export type Profile = {
   name: string;
+  /** Full legal name used on the downloaded résumé; falls back to `name`. */
+  resumeName?: string;
   headline: string;
   summary: string;
   location: string;

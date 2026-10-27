@@ -5,7 +5,7 @@ const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
 
 const config: NextConfig = {
   output: 'export',
-  trailingSlash: true,
+  trailingSlash: false, // /fr is served from fr.html
   basePath,
   images: { unoptimized: true },
 };

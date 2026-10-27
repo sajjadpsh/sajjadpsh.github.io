@@ -1,10 +1,10 @@
 'use client';
-import Link from 'next/link';
 import { useEffect, useRef, type ReactNode } from 'react';
 import Logo from './Logo';
 import ThemeToggle from './ThemeToggle';
-import { localeInfo, locales, type Locale } from '@/lib/i18n';
+import { localeInfo, localePath, locales, type Locale } from '@/lib/i18n';
 import type { Ui } from '@/lib/content';
+import { BASE_PATH } from '@/lib/site';
 
 type NavItem = { id: string; title: string };
 
@@ -52,9 +52,10 @@ export default function Header({ locale, name, nav, ui }: { locale: Locale; name
         <div className="ms-auto flex items-center gap-1 md:ms-2">
           <Menu label={ui.language} icon={<span className="text-xs font-bold uppercase">{locale}</span>}>
             {locales.map((l) => (
-              <Link key={l} href={`/${l}/`} hrefLang={l} lang={l} aria-current={l === locale ? 'page' : undefined} className={`${itemClass} aria-[current]:font-bold`}>
+              // Plain <a>: a language switch replaces the whole <html lang dir> document anyway.
+              <a key={l} href={`${BASE_PATH}${localePath(l)}`} hrefLang={l} lang={l} aria-current={l === locale ? 'page' : undefined} className={`${itemClass} aria-[current]:font-bold`}>
                 {localeInfo[l].label}
-              </Link>
+              </a>
             ))}
           </Menu>
           <ThemeToggle label={ui.toggleTheme} />
