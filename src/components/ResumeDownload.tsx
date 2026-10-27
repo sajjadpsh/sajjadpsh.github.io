@@ -31,7 +31,8 @@ export default function ResumeDownload({ ui, content, pdfContent, intl, pdfIntl,
     hasEditAccess().then(setCanEdit);
   }, []);
 
-  const fileName = `${pdfContent.profile.name.replace(/\s+/g, '_')}_Resume`;
+  const { name, resumeName } = pdfContent.profile;
+  const fileName = `${(resumeName || name).replace(/\s+/g, '_')}_Resume`;
 
   const download = async (kind: 'pdf' | 'docx') => {
     setBusy(kind);

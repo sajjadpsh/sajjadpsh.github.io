@@ -1,4 +1,4 @@
-// The real root layout (with <html lang dir>) is app/[locale]/layout.tsx.
+// Pass-through: each page renders its own <html lang dir> via components/LocalePage.tsx.
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return children;
 }

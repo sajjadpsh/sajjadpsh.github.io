@@ -2,7 +2,7 @@
 
 Static Next.js site (App Router, `output: 'export'`) deployed to GitHub Pages.
 Tailwind CSS v4 (light/dark), Lenis + GSAP scrolling/reveals, [React Bits](https://reactbits.dev) components,
-five languages (`/en`, `/fa`, `/ar`, `/de`, `/fr`, RTL for fa/ar) and an ATS-friendly résumé generated in the browser.
+five languages (English at `/`, then `/fa`, `/ar`, `/de`, `/fr`; RTL for fa/ar) and an ATS-friendly résumé generated in the browser.
 
 ## Where things live
 
@@ -11,6 +11,7 @@ five languages (`/en`, `/fa`, `/ar`, `/de`, `/fr`, RTL for fa/ar) and an ATS-fri
 | All text, sections, projects (one file per language) | `content/<locale>/site.json` |
 | Content types | `src/lib/content.ts` |
 | Languages | `src/lib/i18n.ts` (+ `locales` in the CMS config) |
+| Page shell + SEO metadata | `src/components/LocalePage.tsx` |
 | Section renderers | `src/components/Sections.tsx` |
 | Résumé generator (PDF / DOCX) | `src/lib/resume/` |
 | Hidden content editor | `public/studio-7f3qk9/` → `https://<site>/studio-7f3qk9/` |
@@ -34,7 +35,7 @@ repo anyone can read it, and the GitHub token is what actually protects edits.
 
 ```bash
 npm ci
-npm run dev        # http://localhost:3000/en/
+npm run dev        # http://localhost:3000/
 npm run lint && npm test && npm run build   # static output in ./out
 ```
 

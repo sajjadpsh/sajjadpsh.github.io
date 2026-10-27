@@ -61,7 +61,8 @@ collections:
             widget: object
             i18n: true
             fields:
-              - { name: name, label: Full name, widget: string }
+              - { name: name, label: Display name, widget: string }
+              - { name: resumeName, label: Full name on résumé (optional), widget: string, required: false }
               - { name: headline, label: Headline, widget: string }
               - { name: summary, label: Summary, widget: text }
               - { name: location, label: Location, widget: string }

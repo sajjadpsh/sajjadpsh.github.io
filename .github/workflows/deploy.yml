@@ -37,6 +37,8 @@ jobs:
           # "" when the repo is <user>.github.io, "/<repo>" otherwise.
           NEXT_PUBLIC_BASE_PATH: ${{ steps.pages.outputs.base_path }}
           NEXT_PUBLIC_SITE_URL: ${{ steps.pages.outputs.base_url }}
+      # Pages must serve /fr from fr.html; drop the same-named RSC prefetch folders so nothing competes with it.
+      - run: find out -mindepth 1 -maxdepth 1 -type d -exec test -e {}.html \; -exec rm -rf {} +
       - uses: actions/upload-pages-artifact@v4
         if: github.event_name != 'pull_request'
         with:

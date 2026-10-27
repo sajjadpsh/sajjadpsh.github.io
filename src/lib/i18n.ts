@@ -21,3 +21,6 @@ export const defaultLocale: Locale = 'en';
 const contents = { en, fa, ar, de, fr } as Record<Locale, Content>;
 export const getContent = (locale: Locale) => contents[locale];
 export const isLocale = (value: string): value is Locale => value in localeInfo;
+
+/** URL path of a locale's page: the default locale lives at the site root, others at "/<code>". */
+export const localePath = (locale: Locale) => (locale === defaultLocale ? '/' : `/${locale}`);

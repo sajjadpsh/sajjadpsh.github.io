@@ -6,7 +6,7 @@ import type { Content } from '../content.ts';
 const content = {
   meta: { title: '', description: '' },
   ui: { summary: 'Summary', present: 'Present' },
-  profile: { name: 'Jane', headline: 'Dev', summary: 'Hi', location: 'Here', email: 'j@x.io', links: [{ label: 'GH', url: 'gh.com/j' }] },
+  profile: { name: 'Jane', resumeName: 'Jane Q. Doe', headline: 'Dev', summary: 'Hi', location: 'Here', email: 'j@x.io', links: [{ label: 'GH', url: 'gh.com/j' }] },
   sections: [
     { type: 'timeline', id: 'xp', title: 'Experience', items: [{ title: 'Dev', org: 'Acme', start: '2024-11', bullets: ['Built'] }] },
     { type: 'projects', id: 'p', title: 'Projects', items: [{ name: 'P', url: 'p.io', description: 'Thing' }] },
@@ -17,6 +17,7 @@ const content = {
 
 test('toBlocks flattens visible sections in order', () => {
   const blocks = toBlocks(content, 'en');
+  assert.deepEqual(blocks[0], { kind: 'name', text: 'Jane Q. Doe' });
   assert.deepEqual(blocks[2], { kind: 'para', text: 'Here | j@x.io | gh.com/j' });
   assert.deepEqual(blocks.slice(5), [
     { kind: 'heading', text: 'EXPERIENCE' },
