@@ -1,2 +1,47 @@
-# spectre-m4
-my personal website
+# spectre-m4 — personal portfolio & résumé
+
+Static Next.js site (App Router, `output: 'export'`) deployed to GitHub Pages.
+Tailwind CSS v4 (light/dark), Lenis + GSAP scrolling/reveals, [React Bits](https://reactbits.dev) components,
+five languages (`/en`, `/fa`, `/ar`, `/de`, `/fr`, RTL for fa/ar) and an ATS-friendly résumé generated in the browser.
+
+## Where things live
+
+| What | Where |
+| --- | --- |
+| All text, sections, projects (one file per language) | `content/<locale>/site.json` |
+| Content types | `src/lib/content.ts` |
+| Languages | `src/lib/i18n.ts` (+ `locales` in the CMS config) |
+| Section renderers | `src/components/Sections.tsx` |
+| Résumé generator (PDF / DOCX) | `src/lib/resume/` |
+| Hidden content editor | `public/studio-7f3qk9/` → `https://<site>/studio-7f3qk9/` |
+| Logo / favicon | `src/components/Logo.tsx`, `src/app/icon.svg` |
+
+## Editing content
+
+Open the editor URL above (it is not linked anywhere and is `noindex`) and choose **Sign In Using Access Token**
+with a GitHub fine-grained token that has *Contents: read & write* on this repository. Every save commits to
+`main`, which rebuilds and redeploys the site in about a minute.
+
+Sections can be added, removed, reordered or hidden; each section has a type (`timeline`, `projects`, `skills`, `text`).
+Dates use `YYYY-MM` and are formatted per language automatically. Each language file is edited separately.
+
+**Access model.** There is no separate registration: an "authorized user" is anyone signed in to the editor with
+a token that can push to this repository (manage people via repo collaborators). While signed in, the public site
+also offers the résumé as `.docx`; everyone else gets the PDF. The editor path is obscure, not secret: in a public
+repo anyone can read it, and the GitHub token is what actually protects edits.
+
+## Develop
+
+```bash
+npm ci
+npm run dev        # http://localhost:3000/en/
+npm run lint && npm test && npm run build   # static output in ./out
+```
+
+## Adding a language
+
+1. Copy `content/en/site.json` to `content/<code>/site.json` and translate it.
+2. Add the code to `localeInfo` in `src/lib/i18n.ts` (label, `dir`, `intl`, `latin`) and import the file there.
+3. Add the code to `i18n.locales` in `public/studio-7f3qk9/config.yml`.
+
+React Bits components in `src/components/reactbits/` are © David Haz under MIT + Commons Clause (see the LICENSE there).

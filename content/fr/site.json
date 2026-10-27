@@ -1,0 +1,180 @@
+{
+  "meta": {
+    "title": "Seyedsajjad Pishvaeian — Développeur full stack & front-end",
+    "description": "Portfolio et CV de Seyedsajjad Pishvaeian, développeur full stack et front-end (Nuxt.js, Vue.js, Node.js, Laravel), diplômé en informatique de l'Université de technologie Amirkabir.",
+    "keywords": ["Seyedsajjad Pishvaeian", "Sajjad Pishvaeian", "Développeur full stack", "Développeur front-end", "Nuxt.js", "Vue.js", "Node.js", "Laravel", "Portfolio", "CV"]
+  },
+  "ui": {
+    "summary": "Profil",
+    "present": "aujourd'hui",
+    "downloadResume": "Télécharger le CV",
+    "pdf": "PDF",
+    "docx": "Word (.docx)",
+    "generating": "Génération…",
+    "toggleTheme": "Basculer le mode sombre",
+    "language": "Langue",
+    "menu": "Menu",
+    "contact": "Contact",
+    "visit": "Visiter le site",
+    "rights": "Tous droits réservés.",
+    "skip": "Aller au contenu"
+  },
+  "profile": {
+    "name": "Seyedsajjad Pishvaeian",
+    "headline": "Développeur full stack & front-end",
+    "summary": "Diplômé en informatique de l'Université de technologie Amirkabir, je conçois des applications web rapides et maintenables avec Nuxt.js, Vue.js, Node.js et Laravel — des tableaux de bord IoT aux plateformes logistiques et fintech. J'attache de l'importance aux interfaces claires, aux processus solides (BPMN, QA) et à l'amélioration continue.",
+    "location": "Mashhad, Iran",
+    "email": "sajjad.pishvaeian@live.com",
+    "phone": "+98 (915) 239-8126",
+    "links": [
+      { "label": "LinkedIn", "url": "https://linkedin.com/in/Sajjad-pishvaeian" },
+      { "label": "GitHub", "url": "https://github.com/sajjadpsh" }
+    ]
+  },
+  "sections": [
+    {
+      "type": "projects",
+      "id": "projects",
+      "title": "Projets",
+      "items": [
+        {
+          "name": "CMR Docs",
+          "url": "https://cmrdocs.com/en",
+          "description": "Plateforme logistique pour générer des lettres de voiture CMR, demander des visas de transit, des connaissements et gérer d'autres documents de fret en ligne.",
+          "tags": ["Front-end", "BPMN", "QA"]
+        },
+        {
+          "name": "Fintrum",
+          "url": "https://fintrum.ca",
+          "description": "Plateforme web de services financiers pour le marché canadien, avec une interface claire et responsive qui rend l'information financière facile à explorer.",
+          "tags": ["Fintech", "Application web"]
+        },
+        {
+          "name": "ChaparHub",
+          "url": "https://chaparhub.com",
+          "description": "Hub d'expédition et de messagerie qui réunit réservation de colis, gestion des livraisons et suivi en un seul endroit.",
+          "tags": ["Logistique", "Application web"]
+        },
+        {
+          "name": "Traxloop",
+          "url": "https://traxloop.com/",
+          "description": "Plateforme de suivi qui tient expéditions et opérations informées grâce à des mises à jour de statut en temps réel.",
+          "tags": ["Suivi", "Application web"]
+        }
+      ]
+    },
+    {
+      "type": "timeline",
+      "id": "experience",
+      "title": "Expérience",
+      "items": [
+        {
+          "title": "Développeur front-end, expert BPMN, QA",
+          "org": "Rah Gostar Hoshmand Zhav",
+          "location": "Mashhad, Iran",
+          "start": "2025-05",
+          "end": "2025-07",
+          "bullets": ["Développement de cmrdocs.com, une plateforme offrant la génération de CMR, les demandes de visa de transit, les demandes de connaissement et d'autres opérations logistiques."]
+        },
+        {
+          "title": "Développeur full stack",
+          "org": "DeltaGroup Digital Marketing Agency",
+          "location": "Mashhad, Iran",
+          "start": "2024-11",
+          "end": "2025-03",
+          "bullets": [
+            "Développement d'un tableau de bord IoT pour l'agriculture avec Nuxt.js, Tailwind CSS, MySQL et Laravel (PHP).",
+            "Développement d'un tableau de bord IoT pour l'hôtellerie avec Nuxt.js, Tailwind CSS et Node.js."
+          ]
+        },
+        {
+          "title": "Développeur full stack",
+          "org": "Agence de voyages Partvanak",
+          "location": "Mashhad, Iran",
+          "start": "2021-10",
+          "end": "2022-10",
+          "bullets": ["Développement du site officiel et de l'application web de l'entreprise avec Nuxt.js, Bootstrap, MySQL et Laravel (PHP)."]
+        },
+        {
+          "title": "Assistant d'enseignement",
+          "org": "Université de technologie Amirkabir",
+          "location": "Téhéran, Iran",
+          "start": "2020-02",
+          "end": "2021-02",
+          "bullets": ["Cours : Réseaux informatiques", "Cours : Principes de la sécurité de l'information"]
+        },
+        {
+          "title": "Développeur front-end",
+          "org": "Finnova Fintech Lab, Université de technologie Amirkabir",
+          "location": "Téhéran, Iran",
+          "start": "2019-09",
+          "end": "2020-06",
+          "bullets": ["Développement du site et de l'application web du laboratoire avec Nuxt.js et Bootstrap."]
+        }
+      ]
+    },
+    {
+      "type": "timeline",
+      "id": "education",
+      "title": "Formation",
+      "items": [
+        {
+          "title": "Licence d'ingénierie, informatique",
+          "org": "Université de technologie Amirkabir",
+          "location": "Téhéran, Iran",
+          "start": "2016-09",
+          "end": "2021-09",
+          "bullets": [
+            "Moyenne (GPA) : 2,8/4,0",
+            "Cours pertinents : Cloud computing, Génie logiciel, Systèmes d'exploitation, Algorithmique I & II, Intelligence artificielle, Mathématiques, Mathématiques discrètes, Statistiques",
+            "Mémoire : Analyse des attaques par canaux auxiliaires sur un environnement d'exécution de confiance et proposition de solutions réalisables (directeur : Dr Seyed Ahmad Javadi)"
+          ]
+        },
+        {
+          "title": "Diplôme d'études secondaires",
+          "org": "Lycée Hasheminejad 1 (Organisation nationale pour le développement des talents exceptionnels)",
+          "location": "Mashhad, Iran",
+          "start": "2012-09",
+          "end": "2016-09"
+        },
+        {
+          "title": "Collège",
+          "org": "Collège Besat",
+          "location": "Mashhad, Iran",
+          "start": "2009-09",
+          "end": "2012-09"
+        },
+        {
+          "title": "École primaire",
+          "org": "École primaire Omid",
+          "location": "Mashhad, Iran",
+          "start": "2004-09",
+          "end": "2009-09"
+        }
+      ]
+    },
+    {
+      "type": "skills",
+      "id": "skills",
+      "title": "Compétences & intérêts",
+      "groups": [
+        {
+          "label": "Compétences techniques",
+          "items": ["Python", "JavaScript", "Java", "C/C++", "PHP", "Nuxt.js", "Vue.js", "WordPress", "Node.js", "Django", "FastAPI", "Git", "PostgreSQL", "MongoDB", "MySQL", "TensorFlow", "NumPy", "Pandas", "Scikit-learn"]
+        },
+        {
+          "label": "Compétences personnelles",
+          "items": ["Esprit d'initiative et résolution de problèmes", "Amélioration continue", "Travail d'équipe", "Pensée algorithmique", "Présentation technique"]
+        },
+        {
+          "label": "Langues",
+          "items": ["Persan (langue maternelle)", "Anglais (B2)", "Français (B1)"]
+        },
+        {
+          "label": "Domaines de recherche",
+          "items": ["Apprentissage automatique", "Apprentissage profond", "Vision par ordinateur", "Développement web", "Sécurité des données, des réseaux et des communications", "Internet des objets", "Cloud computing", "Fouille de données"]
+        }
+      ]
+    }
+  ]
+}
