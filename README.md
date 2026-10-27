@@ -1,4 +1,4 @@
-# spectre-m4 — personal portfolio & résumé
+# sajjadpsh.github.io — personal portfolio & résumé
 
 Static Next.js site (App Router, `output: 'export'`) deployed to GitHub Pages.
 Tailwind CSS v4 (light/dark), Lenis + GSAP scrolling/reveals, [React Bits](https://reactbits.dev) components,
