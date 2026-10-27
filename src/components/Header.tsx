@@ -38,7 +38,7 @@ export default function Header({ locale, name, nav, ui }: { locale: Locale; name
   return (
     <header className="sticky top-0 z-40 border-b border-black/5 bg-white/70 backdrop-blur-lg dark:border-white/10 dark:bg-zinc-950/70">
       <div className="mx-auto flex h-16 max-w-6xl items-center gap-4 px-4 sm:px-6">
-        <a href="#top" className="flex items-center gap-2 font-semibold">
+        <a href={`${BASE_PATH}${localePath(locale)}`} data-scroll-top className="flex items-center gap-2 font-semibold">
           <Logo className="size-8" id="logo-header" />
           <span className="hidden sm:inline">{name}</span>
         </a>

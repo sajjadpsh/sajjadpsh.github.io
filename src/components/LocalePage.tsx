@@ -11,6 +11,7 @@ import Section from './Sections';
 import Footer from './Footer';
 import ResumeDownload from './ResumeDownload';
 import SmoothScroll from './SmoothScroll';
+import Animations from './Animations';
 
 const pageUrl = (locale: Locale) => `${SITE_URL}${localePath(locale)}`;
 
@@ -66,11 +67,17 @@ export default function LocalePage({ locale }: { locale: Locale }) {
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
       <body className="bg-white text-zinc-900 antialiased dark:bg-zinc-950 dark:text-zinc-100">
+        <div
+          data-progress
+          aria-hidden="true"
+          style={{ transform: 'scaleX(0)' }}
+          className="fixed inset-x-0 top-0 z-50 h-0.5 origin-left bg-gradient-to-r from-indigo-500 via-cyan-400 to-purple-500 rtl:origin-right"
+        />
         <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:start-2 focus:z-50 focus:rounded focus:bg-white focus:p-2 focus:text-black">
           {ui.skip}
         </a>
         <Header locale={locale} name={profile.name} ui={ui} nav={[...sections.map(({ id, title }) => ({ id, title })), { id: 'contact', title: ui.contact }]} />
-        <main id="main">
+        <main id="main" tabIndex={-1} className="outline-none">
           <Hero profile={profile}>
             <ResumeDownload
               ui={ui}
@@ -86,7 +93,8 @@ export default function LocalePage({ locale }: { locale: Locale }) {
           ))}
         </main>
         <Footer profile={profile} ui={ui} />
-        <SmoothScroll />
+        <SmoothScroll backToTop={ui.backToTop} />
+        <Animations />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }} />
       </body>
     </html>

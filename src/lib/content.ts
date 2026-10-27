@@ -46,6 +46,7 @@ export type Ui = {
   contact: string;
   visit: string;
   rights: string;
+  backToTop: string;
   skip: string;
 };
 

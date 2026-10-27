@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "Sajjad Pishvaeian Full Stack Developer and software engineer",
+    "title": "Sajjad Pishvaeian - Full Stack & Front End Developer",
     "description": "Portfolio and résumé of Sajjad Pishvaeian, a full stack and front end developer (Nuxt.js, Vue.js, Node.js, Laravel) and Computer Science graduate of Amirkabir University of Technology.",
     "keywords": ["Seyedsajjad Pishvaeian", "Sajjad Pishvaeian", "Full Stack Developer", "Front End Developer", "Nuxt.js", "Vue.js", "Node.js", "Laravel", "Portfolio", "Resume"]
   },
@@ -17,12 +17,13 @@
     "contact": "Contact",
     "visit": "Visit site",
     "rights": "All rights reserved.",
+    "backToTop": "Back to top",
     "skip": "Skip to content"
   },
   "profile": {
     "name": "Sajjad Pishvaeian",
     "resumeName": "Seyedsajjad Pishvaeian",
-    "headline": "Full Stack & Front End Developer",
+    "headline": "Full Stack Developer & Software Engineer",
     "summary": "Computer Science graduate of Amirkabir University of Technology who builds fast, maintainable web applications with Nuxt.js, Vue.js, Node.js and Laravel — from IoT control panels to logistics and fintech platforms. I care about clean interfaces, solid processes (BPMN, QA) and continuous improvement.",
     "location": "Mashhad, Iran",
     "email": "sajjad.pishvaeian@live.com",
@@ -41,26 +42,26 @@
         {
           "name": "CMR Docs",
           "url": "https://cmrdocs.com/en",
-          "description": "Logistics platform for generating CMR consignment notes, applying for transit visas, requesting bills of lading and handling other freight paperwork online.",
-          "tags": ["Front end", "BPMN", "QA"]
+          "description": "Online logistics platform for road-freight paperwork: CMR consignment note generation, transit visa applications, bill of lading requests and other logistics operations in one place.",
+          "tags": ["Logistics", "Front end", "BPMN", "QA"]
         },
         {
           "name": "Fintrum",
           "url": "https://fintrum.ca",
-          "description": "Financial services web platform for the Canadian market, with a clean, responsive interface that makes financial information easy to explore.",
-          "tags": ["Fintech", "Web app"]
+          "description": "AI-powered decision-support platform for options traders, with real-time analysis of the greeks, order-flow analytics and disciplined strategy execution — every strike and every expiry in one clear view.",
+          "tags": ["Fintech", "AI", "Trading"]
         },
         {
           "name": "ChaparHub",
           "url": "https://chaparhub.com",
-          "description": "Shipping and courier hub that brings parcel booking, delivery management and tracking together in one place.",
-          "tags": ["Logistics", "Web app"]
+          "description": "Publishing and marketing operations hub: compose once for twelve channels — from Instagram, LinkedIn and YouTube to Telegram, WhatsApp and Google Business Profile — then plan campaigns, track spend and funnel, and report revenue to clients.",
+          "tags": ["Marketing", "SaaS", "Analytics"]
         },
         {
-          "name": "Traxloop",
+          "name": "TraxLoop",
           "url": "https://traxloop.com/",
-          "description": "Tracking platform that keeps shipments and operations in the loop with real-time status updates.",
-          "tags": ["Tracking", "Web app"]
+          "description": "The verifiable record for cross-border trade: orders, shipments, transport documents, customs filings, trade finance and carrier tracking on one tamper-evident record shared by every party, with SHA-256 sealed revisions and signed documents.",
+          "tags": ["Trade", "Logistics", "Security"]
         }
       ]
     },
