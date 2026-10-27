@@ -1,0 +1,141 @@
+# Sveltia CMS config. Content model mirrors src/lib/content.ts.
+# Every save commits to `main`, which triggers the Pages workflow and redeploys the site.
+backend:
+  name: github
+  repo: sajjadpsh/spectre-m4
+  branch: main
+  commit_messages:
+    update: 'content: update {{path}}'
+
+site_url: https://sajjadpsh.github.io
+media_folder: public/uploads
+public_folder: /uploads
+
+i18n:
+  structure: multiple_files
+  locales: [en, fa, ar, de, fr] # keep in sync with src/lib/i18n.ts
+  default_locale: en
+
+collections:
+  - name: site
+    label: Website
+    i18n: true
+    files:
+      - name: content
+        label: Content
+        file: content/{{locale}}/site.json
+        i18n: true
+        fields:
+          - name: meta
+            label: SEO
+            widget: object
+            i18n: true
+            collapsed: true
+            fields:
+              - { name: title, label: Page title, widget: string }
+              - { name: description, label: Meta description, widget: text }
+              - { name: keywords, label: Keywords, widget: list, required: false, field: { name: keyword, label: Keyword, widget: string } }
+
+          - name: ui
+            label: Interface labels
+            widget: object
+            i18n: true
+            collapsed: true
+            fields:
+              - { name: summary, label: '"Summary" heading (résumé)', widget: string }
+              - { name: present, label: '"Present" (ongoing dates)', widget: string }
+              - { name: downloadResume, label: Download button, widget: string }
+              - { name: pdf, label: PDF label, widget: string }
+              - { name: docx, label: DOCX label, widget: string }
+              - { name: generating, label: Generating…, widget: string }
+              - { name: toggleTheme, label: Theme toggle, widget: string }
+              - { name: language, label: Language menu, widget: string }
+              - { name: menu, label: Mobile menu, widget: string }
+              - { name: contact, label: Contact heading, widget: string }
+              - { name: visit, label: Visit project link, widget: string }
+              - { name: rights, label: Copyright text, widget: string }
+              - { name: skip, label: Skip link, widget: string }
+
+          - name: profile
+            label: Profile
+            widget: object
+            i18n: true
+            fields:
+              - { name: name, label: Full name, widget: string }
+              - { name: headline, label: Headline, widget: string }
+              - { name: summary, label: Summary, widget: text }
+              - { name: location, label: Location, widget: string }
+              - { name: email, label: Email, widget: string }
+              - { name: phone, label: Phone, widget: string, required: false }
+              - name: links
+                label: Links
+                widget: list
+                fields:
+                  - { name: label, label: Label, widget: string }
+                  - { name: url, label: URL, widget: string }
+
+          - name: sections
+            label: Sections (drag to reorder)
+            widget: list
+            i18n: true
+            types:
+              - name: timeline
+                label: Timeline (experience, education…)
+                widget: object
+                summary: '{{title}}'
+                fields:
+                  - { name: id, label: Anchor id, widget: string, pattern: ['^[a-z0-9-]+$', 'Lowercase letters, digits and dashes only'] }
+                  - { name: title, label: Title, widget: string }
+                  - { name: hidden, label: Hidden, widget: boolean, required: false, default: false }
+                  - name: items
+                    label: Entries
+                    widget: list
+                    summary: '{{title}} — {{org}}'
+                    fields:
+                      - { name: title, label: Role / degree, widget: string }
+                      - { name: org, label: Organization, widget: string }
+                      - { name: location, label: Location, widget: string, required: false }
+                      - { name: start, label: Start (YYYY-MM), widget: string, pattern: ['^\d{4}-\d{2}$', 'Use YYYY-MM'] }
+                      - { name: end, label: 'End (YYYY-MM, empty = present)', widget: string, required: false, pattern: ['^(\d{4}-\d{2})?$', 'Use YYYY-MM'] }
+                      - { name: bullets, label: Details, widget: list, required: false, field: { name: bullet, label: Detail, widget: text } }
+              - name: projects
+                label: Projects
+                widget: object
+                summary: '{{title}}'
+                fields:
+                  - { name: id, label: Anchor id, widget: string, pattern: ['^[a-z0-9-]+$', 'Lowercase letters, digits and dashes only'] }
+                  - { name: title, label: Title, widget: string }
+                  - { name: hidden, label: Hidden, widget: boolean, required: false, default: false }
+                  - name: items
+                    label: Projects
+                    widget: list
+                    summary: '{{name}}'
+                    fields:
+                      - { name: name, label: Name, widget: string }
+                      - { name: url, label: URL, widget: string, pattern: ['^https?://', 'Must start with http(s)://'] }
+                      - { name: description, label: Description, widget: text }
+                      - { name: tags, label: Tags, widget: list, required: false, field: { name: tag, label: Tag, widget: string } }
+              - name: skills
+                label: Skills
+                widget: object
+                summary: '{{title}}'
+                fields:
+                  - { name: id, label: Anchor id, widget: string, pattern: ['^[a-z0-9-]+$', 'Lowercase letters, digits and dashes only'] }
+                  - { name: title, label: Title, widget: string }
+                  - { name: hidden, label: Hidden, widget: boolean, required: false, default: false }
+                  - name: groups
+                    label: Groups
+                    widget: list
+                    summary: '{{label}}'
+                    fields:
+                      - { name: label, label: Group, widget: string }
+                      - { name: items, label: Items, widget: list, field: { name: item, label: Item, widget: string } }
+              - name: text
+                label: Free text
+                widget: object
+                summary: '{{title}}'
+                fields:
+                  - { name: id, label: Anchor id, widget: string, pattern: ['^[a-z0-9-]+$', 'Lowercase letters, digits and dashes only'] }
+                  - { name: title, label: Title, widget: string }
+                  - { name: hidden, label: Hidden, widget: boolean, required: false, default: false }
+                  - { name: body, label: Text, widget: text }

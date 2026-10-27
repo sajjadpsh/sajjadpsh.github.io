@@ -1,0 +1,31 @@
+@import 'tailwindcss';
+@import 'lenis/dist/lenis.css';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: 'Inter Variable', 'Vazirmatn Variable', ui-sans-serif, system-ui, sans-serif;
+}
+
+html:lang(fa),
+html:lang(ar) {
+  --font-sans: 'Vazirmatn Variable', ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer components {
+  .card {
+    @apply rounded-2xl border border-black/5 bg-white dark:border-white/10 dark:bg-zinc-900;
+  }
+  .icon-btn {
+    @apply inline-flex size-9 cursor-pointer items-center justify-center rounded-full transition hover:bg-black/5 dark:hover:bg-white/10;
+  }
+  .btn-primary {
+    @apply inline-flex cursor-pointer items-center gap-2 rounded-full bg-zinc-900 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-indigo-500/20 transition hover:-translate-y-0.5 disabled:cursor-wait disabled:opacity-60 dark:bg-white dark:text-zinc-900;
+  }
+  .btn-ghost {
+    @apply inline-flex cursor-pointer items-center gap-2 rounded-full border border-zinc-300 px-5 py-3 text-sm font-semibold transition hover:-translate-y-0.5 disabled:cursor-wait disabled:opacity-60 dark:border-zinc-700;
+  }
+  .chip {
+    @apply inline-block rounded-full border border-zinc-200 bg-white/60 px-3 py-1 text-xs font-medium text-zinc-700 backdrop-blur dark:border-zinc-800 dark:bg-zinc-900/60 dark:text-zinc-300;
+  }
+}
