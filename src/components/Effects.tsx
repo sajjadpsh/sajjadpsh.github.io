@@ -1,14 +1,28 @@
 'use client';
 // Theme-aware wrappers around the React Bits components (which take concrete colors, not CSS vars).
-import type { ReactNode } from 'react';
-import Aurora from './reactbits/Aurora';
+import { useEffect, useState, type ReactNode } from 'react';
+import dynamic from 'next/dynamic';
 import ShinyText from './reactbits/ShinyText';
 import SplitText from './reactbits/SplitText';
 import SpotlightCard from './reactbits/SpotlightCard';
 import { useIsDark } from '@/lib/useIsDark';
 
+// Code-split: the WebGL background isn't needed for first paint.
+const Aurora = dynamic(() => import('./reactbits/Aurora'), { ssr: false });
+
 export function HeroBackground() {
   const dark = useIsDark();
+  // Mount WebGL (context + shader compile) only once the browser is idle, keeping it off the hydration path.
+  const [idle, setIdle] = useState(false);
+  useEffect(() => {
+    if (!('requestIdleCallback' in window)) {
+      const t = setTimeout(() => setIdle(true), 300); // Safari
+      return () => clearTimeout(t);
+    }
+    const id = requestIdleCallback(() => setIdle(true), { timeout: 2000 });
+    return () => cancelIdleCallback(id);
+  }, []);
+  if (!idle) return null;
   return (
     <div className="pointer-events-none absolute inset-0 -z-10" aria-hidden="true">
       {/* No remount key: Aurora applies theme props live; dpr 1 because the soft gradient looks identical. */}
@@ -46,6 +60,7 @@ export function Headline({ text }: { text: string }) {
       color={dark ? '#a1a1aa' : '#52525b'}
       shineColor={dark ? '#ffffff' : '#6366f1'}
       speed={3}
+      delay={2.5} // pause between sweeps instead of a non-stop repaint loop
       className="text-lg font-semibold sm:text-2xl"
     />
   );

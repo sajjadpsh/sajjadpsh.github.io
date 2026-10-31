@@ -40,7 +40,7 @@ html:lang(ar) {
     @apply rounded-2xl border border-black/5 bg-white dark:border-white/10 dark:bg-zinc-900;
   }
   .icon-btn {
-    @apply inline-flex size-9 cursor-pointer items-center justify-center rounded-full transition hover:bg-black/5 dark:hover:bg-white/10;
+    @apply inline-flex size-11 cursor-pointer sm:size-9 items-center justify-center rounded-full transition hover:bg-black/5 dark:hover:bg-white/10;
   }
   .btn-primary {
     @apply inline-flex cursor-pointer items-center gap-2 rounded-full bg-zinc-900 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-indigo-500/20 transition hover:-translate-y-0.5 disabled:cursor-wait disabled:opacity-60 dark:bg-white dark:text-zinc-900;

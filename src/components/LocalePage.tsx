@@ -3,7 +3,7 @@ import '@fontsource-variable/inter';
 import '@fontsource-variable/vazirmatn';
 import '@/app/globals.css';
 import { getContent, localeInfo, localePath, locales, defaultLocale, type Locale } from '@/lib/i18n';
-import { SITE_URL } from '@/lib/site';
+import { BASE_PATH, SITE_URL } from '@/lib/site';
 import { buildJsonLd } from '@/lib/jsonLd';
 import { themeScript } from './ThemeToggle';
 import Header from './Header';
@@ -23,7 +23,7 @@ export function localeMetadata(locale: Locale): Metadata {
     metadataBase: new URL(SITE_URL),
     title: meta.title,
     description: meta.description,
-    keywords: meta.keywords,
+    keywords: meta.keywords && [...new Set(meta.keywords)],
     authors: [{ name: profile.name }],
     alternates: {
       canonical: pageUrl(locale),
@@ -35,8 +35,8 @@ export function localeMetadata(locale: Locale): Metadata {
       title: meta.title,
       description: meta.description,
       siteName: profile.name,
-      locale,
-      alternateLocale: locales.filter((l) => l !== locale),
+      locale: localeInfo[locale].og,
+      alternateLocale: locales.filter((l) => l !== locale).map((l) => localeInfo[l].og),
       images: [image],
     },
     twitter: { card: 'summary_large_image', title: meta.title, description: meta.description, images: [image] },
@@ -51,10 +51,11 @@ export default function LocalePage({ locale }: { locale: Locale }) {
   const info = localeInfo[locale];
   // The PDF uses built-in Latin fonts, so non-Latin pages get the English résumé.
   const pdfLocale = info.latin ? locale : 'en';
+  const pdf = getContent(pdfLocale).profile;
 
   const jsonLd = buildJsonLd({
     content,
-    defaultContent: getContent(defaultLocale),
+    allContent: locales.map(getContent),
     locale,
     locales,
     intl: info.intl,
@@ -81,11 +82,11 @@ export default function LocalePage({ locale }: { locale: Locale }) {
           <Hero profile={profile}>
             <ResumeDownload
               ui={ui}
-              content={content}
-              pdfContent={getContent(pdfLocale)}
+              locale={locale}
               intl={info.intl}
-              pdfIntl={localeInfo[pdfLocale].intl}
               rtl={info.dir === 'rtl'}
+              pdfHref={`${BASE_PATH}/resume/${pdfLocale}.pdf`}
+              fileName={`${(pdf.resumeName || pdf.name).replace(/\s+/g, '_')}_Resume`}
             />
           </Hero>
           {sections.map((s) => (

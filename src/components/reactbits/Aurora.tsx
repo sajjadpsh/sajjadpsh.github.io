@@ -366,6 +366,8 @@ const Aurora = ({
     let raf = 0;
     let last = 0;
     let visible = true;
+    // Local change: governor. A device that can't hold ~20 fps over the first 45 frames gets a still frame.
+    const perf = { frames: 0, time: 0, degraded: false };
 
     const render = () => {
       const s = settingsRef.current;
@@ -398,6 +400,15 @@ const Aurora = ({
       if (!visible || document.hidden) return;
       if (last && now - last < MIN_FRAME_MS) {
         raf = requestAnimationFrame(frame);
+        return;
+      }
+      if (last && !perf.degraded && perf.frames < 45) {
+        perf.time += now - last;
+        if (++perf.frames === 45 && perf.time / 45 > 50) perf.degraded = true;
+      }
+      if (perf.degraded) {
+        state.reveal = 1;
+        render();
         return;
       }
       const s = settingsRef.current;

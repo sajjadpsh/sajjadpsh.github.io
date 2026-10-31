@@ -6,12 +6,13 @@ import de from '@content/de/site.json';
 import fr from '@content/fr/site.json';
 
 // To add a language: add content/<code>/site.json, an entry below, and the code in the CMS config.
+// og: Open Graph locale (language_TERRITORY, as Facebook/LinkedIn expect).
 export const localeInfo = {
-  en: { label: 'English', dir: 'ltr', intl: 'en', latin: true },
-  fa: { label: 'فارسی', dir: 'rtl', intl: 'fa-u-ca-gregory', latin: false },
-  ar: { label: 'العربية', dir: 'rtl', intl: 'ar-u-ca-gregory', latin: false },
-  de: { label: 'Deutsch', dir: 'ltr', intl: 'de', latin: true },
-  fr: { label: 'Français', dir: 'ltr', intl: 'fr', latin: true },
+  en: { label: 'English', dir: 'ltr', intl: 'en', latin: true, og: 'en_US' },
+  fa: { label: 'فارسی', dir: 'rtl', intl: 'fa-u-ca-gregory', latin: false, og: 'fa_IR' },
+  ar: { label: 'العربية', dir: 'rtl', intl: 'ar-u-ca-gregory', latin: false, og: 'ar_AR' },
+  de: { label: 'Deutsch', dir: 'ltr', intl: 'de', latin: true, og: 'de_DE' },
+  fr: { label: 'Français', dir: 'ltr', intl: 'fr', latin: true, og: 'fr_FR' },
 } as const;
 
 export type Locale = keyof typeof localeInfo;
