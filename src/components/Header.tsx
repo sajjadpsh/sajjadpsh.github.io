@@ -21,6 +21,7 @@ function Menu({ label, icon, children }: { label: string; icon: ReactNode; child
   return (
     <details
       ref={ref}
+      aria-label={label}
       className="relative"
       onClick={(e) => (e.target as HTMLElement).closest('a') && ref.current?.removeAttribute('open')}
     >
@@ -38,7 +39,7 @@ export default function Header({ locale, name, nav, ui }: { locale: Locale; name
   return (
     <header className="sticky top-0 z-40 border-b border-black/5 bg-white/70 backdrop-blur-lg dark:border-white/10 dark:bg-zinc-950/70">
       <div className="mx-auto flex h-16 max-w-6xl items-center gap-4 px-4 sm:px-6">
-        <a href={`${BASE_PATH}${localePath(locale)}`} data-scroll-top className="flex items-center gap-2 font-semibold">
+        <a href={`${BASE_PATH}${localePath(locale)}`} data-scroll-top aria-label={name} className="flex items-center gap-2 font-semibold">
           <Logo className="size-8" id="logo-header" />
           <span className="hidden sm:inline">{name}</span>
         </a>
@@ -50,7 +51,15 @@ export default function Header({ locale, name, nav, ui }: { locale: Locale; name
           ))}
         </nav>
         <div className="ms-auto flex items-center gap-1 md:ms-2">
-          <Menu label={ui.language} icon={<span className="text-xs font-bold uppercase">{locale}</span>}>
+          <Menu label={ui.language} icon={
+              <span className="flex items-center gap-1 text-xs font-bold uppercase">
+                <svg viewBox="0 0 24 24" className="size-4" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                  <circle cx="12" cy="12" r="9" />
+                  <path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18" />
+                </svg>
+                {locale}
+              </span>
+            }>
             {locales.map((l) => (
               // Plain <a>: a language switch replaces the whole <html lang dir> document anyway.
               <a key={l} href={`${BASE_PATH}${localePath(l)}`} hrefLang={l} lang={l} aria-current={l === locale ? 'page' : undefined} className={`${itemClass} aria-[current]:font-bold`}>

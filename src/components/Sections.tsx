@@ -19,7 +19,7 @@ function Body({ section, intl, ui }: { section: SectionData } & Ctx) {
               <span data-dot className="absolute -start-[30px] top-1.5 size-3 rounded-full bg-gradient-to-br from-indigo-500 to-cyan-500 ring-4 ring-white dark:ring-zinc-950" />
               <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
                 <h3 className="text-lg font-semibold">{item.title}</h3>
-                <span className="text-sm text-zinc-500 tabular-nums">{formatPeriod(item.start, item.end, intl, ui.present)}</span>
+                <span className="text-sm text-zinc-500 tabular-nums dark:text-zinc-400">{formatPeriod(item.start, item.end, intl, ui.present)}</span>
               </div>
               <p className="text-sm text-indigo-600 dark:text-indigo-400">{[item.org, item.location].filter(Boolean).join(' · ')}</p>
               {item.bullets?.length ? (

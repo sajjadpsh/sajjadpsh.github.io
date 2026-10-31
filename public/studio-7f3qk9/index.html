@@ -9,6 +9,7 @@
   </head>
   <body>
     <!-- Sveltia CMS (Decap-compatible). Sign in with a GitHub token that can push to the repo. -->
-    <script src="https://unpkg.com/@sveltia/cms@0.253.1/dist/sveltia-cms.js"></script>
+    <!-- integrity pins the exact file: browsers refuse it if unpkg ever serves anything else. Update the hash when bumping the version. -->
+    <script src="https://unpkg.com/@sveltia/cms@0.253.1/dist/sveltia-cms.js" integrity="sha384-YXjq3mkXJGchCcuDN3/22Wn7iy4syPQIe0Ht4Ls+6Mk+BtChdpMaDhMFxWlzvke4" crossorigin="anonymous"></script>
   </body>
 </html>

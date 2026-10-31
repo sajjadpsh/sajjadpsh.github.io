@@ -1,8 +1,8 @@
 // "<S>": a code tag wrapped around the S of Sajjad — a developer's portfolio in one mark.
-// Keep in sync with src/app/icon.svg (the favicon).
+// Keep in sync with src/app/icon.svg (the favicon). Decorative: it always sits next to the name text.
 export default function Logo({ className = 'size-9', id = 'logo' }: { className?: string; id?: string }) {
   return (
-    <svg viewBox="0 0 64 64" className={className} role="img" aria-label="SP logo">
+    <svg viewBox="0 0 64 64" className={className} aria-hidden="true">
       <defs>
         <linearGradient id={id} x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
           <stop stopColor="#6366f1" />
