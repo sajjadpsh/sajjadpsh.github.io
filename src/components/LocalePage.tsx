@@ -4,6 +4,7 @@ import '@fontsource-variable/vazirmatn';
 import '@/app/globals.css';
 import { getContent, localeInfo, localePath, locales, defaultLocale, type Locale } from '@/lib/i18n';
 import { SITE_URL } from '@/lib/site';
+import { buildJsonLd } from '@/lib/jsonLd';
 import { themeScript } from './ThemeToggle';
 import Header from './Header';
 import Hero from './Hero';
@@ -49,17 +50,15 @@ export default function LocalePage({ locale }: { locale: Locale }) {
   // The PDF uses built-in Latin fonts, so non-Latin pages get the English résumé.
   const pdfLocale = info.latin ? locale : 'en';
 
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'Person',
-    name: profile.name,
-    alternateName: profile.resumeName,
-    jobTitle: profile.headline,
-    email: `mailto:${profile.email}`,
-    url: pageUrl(locale),
-    address: { '@type': 'PostalAddress', addressLocality: profile.location },
-    sameAs: profile.links.map((l) => l.url),
-  };
+  const jsonLd = buildJsonLd({
+    content,
+    defaultContent: getContent(defaultLocale),
+    locale,
+    locales,
+    intl: info.intl,
+    siteUrl: SITE_URL,
+    pageUrl: pageUrl(locale),
+  });
 
   return (
     <html lang={locale} dir={info.dir} suppressHydrationWarning>

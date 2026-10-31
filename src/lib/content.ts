@@ -9,6 +9,11 @@ export type Profile = {
   headline: string;
   summary: string;
   location: string;
+  /** Structured-data address parts; `location` stays the display string. */
+  city?: string;
+  countryCode?: string; // ISO 3166-1 alpha-2, e.g. IR
+  /** BCP 47 codes of languages spoken, e.g. ["fa", "en"]; names are localized automatically. */
+  languageCodes?: string[];
   email: string;
   phone?: string;
   links: Link[];
@@ -24,7 +29,8 @@ export type TimelineItem = {
 };
 
 export type Project = { name: string; url: string; description: string; tags?: string[] };
-export type SkillGroup = { label: string; items: string[] };
+/** knowsAbout: list these items as expertise in structured data (skip e.g. soft skills, spoken languages). */
+export type SkillGroup = { label: string; items: string[]; knowsAbout?: boolean };
 
 type SectionBase = { id: string; title: string; hidden?: boolean };
 export type Section =
