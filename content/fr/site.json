@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Sajjad Pishvaeian - Développeur full stack & front-end",
-    "description": "Portfolio et CV de Sajjad Pishvaeian, développeur full stack et front-end (Nuxt.js, Vue.js, Node.js, Laravel), diplômé en informatique de l'Université de technologie Amirkabir.",
+    "title": "Sajjad Pishvaeian - Développeur full stack & ingénieur logiciel",
+    "description": "Portfolio et CV de Sajjad Pishvaeian, développeur full stack et ingénieur logiciel (JavaScript, Python, Node.js, Laravel, BPMN), diplômé en informatique de l'Université de technologie Amirkabir.",
     "keywords": [
       "Seyedsajjad Pishvaeian",
       "Sajjad Pishvaeian",
@@ -34,7 +34,7 @@
   },
   "profile": {
     "name": "Sajjad Pishvaeian",
-    "resumeName": "Seyedsajjad Pishvaeian",
+    "resumeName": "Sajjad Pishvaeian",
     "headline": "Développeur full stack & ingénieur logiciel",
     "summary": "Diplômé en informatique de l'Université de technologie Amirkabir, je conçois des applications web rapides et maintenables avec Nuxt.js, Vue.js, Node.js et Laravel — des tableaux de bord IoT aux plateformes logistiques et fintech. J'attache de l'importance aux interfaces claires, aux processus solides (BPMN, QA) et à l'amélioration continue.",
     "location": "Mashhad, Iran",
@@ -76,7 +76,7 @@
           ],
           "role": "Développeur front-end, expert BPMN, QA",
           "start": "2025-05",
-          "end": "2025-07"
+          "end": "2026-10"
         },
         {
           "name": "Fintrum",
@@ -124,7 +124,7 @@
           "org": "Rah Gostar Hoshmand Zhav",
           "location": "Mashhad, Iran",
           "start": "2025-05",
-          "end": "2025-07",
+          "end": "2026-10",
           "bullets": [
             "Développement de cmrdocs.com, une plateforme offrant la génération de CMR, les demandes de visa de transit, les demandes de connaissement et d'autres opérations logistiques."
           ]
