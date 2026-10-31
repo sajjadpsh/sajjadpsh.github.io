@@ -1,9 +1,9 @@
 {
   "meta": {
-    "title": "Sajjad Pishvaeian - Full Stack & Front End Developer",
-    "description": "Portfolio and résumé of Sajjad Pishvaeian, a full stack and front end developer (Nuxt.js, Vue.js, Node.js, Laravel) and Computer Science graduate of Amirkabir University of Technology.",
+    "title": "Sajjad Pishvaeian - Full Stack Developer & Software Engineer",
+    "description": "Portfolio and résumé of Sajjad Pishvaeian, a full stack developer and software engineer (Javascript, Python, Node.js, Laravel, BPMN) and Computer Science graduate of Amirkabir University of Technology.",
     "keywords": [
-      "Seyedsajjad Pishvaeian",
+      "Sajjad Pishvaeian",
       "Sajjad Pishvaeian",
       "Full Stack Developer",
       "Front End Developer",
@@ -33,7 +33,7 @@
   },
   "profile": {
     "name": "Sajjad Pishvaeian",
-    "resumeName": "Seyedsajjad Pishvaeian",
+    "resumeName": "Sajjad Pishvaeian",
     "headline": "Full Stack Developer & Software Engineer",
     "summary": "Computer Science graduate of Amirkabir University of Technology who builds fast, maintainable web applications with Nuxt.js, Vue.js, Node.js and Laravel — from IoT control panels to logistics and fintech platforms. I care about clean interfaces, solid processes (BPMN, QA) and continuous improvement.",
     "location": "Mashhad, Iran",
