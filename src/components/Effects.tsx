@@ -11,8 +11,9 @@ export function HeroBackground() {
   const dark = useIsDark();
   return (
     <div className="pointer-events-none absolute inset-0 -z-10" aria-hidden="true">
+      {/* No remount key: Aurora applies theme props live; dpr 1 because the soft gradient looks identical. */}
       <Aurora
-        key={String(dark)}
+        dpr={1}
         colorStops={['#6366f1', '#06b6d4', '#a855f7']}
         lightMode={!dark}
         opacity={dark ? 0.8 : 0.9}
