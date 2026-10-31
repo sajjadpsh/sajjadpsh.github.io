@@ -449,8 +449,9 @@ const SplitText = ({
         textAlign,
         wordWrap: 'break-word',
         color,
-        visibility: ready ? undefined : 'hidden'
       }}
+      // Local change: hidden via CSS until split (globals.css), not an inline style, so the server HTML shows the heading.
+      data-ready={ready || undefined}
     >
       {text}
     </Tag>
