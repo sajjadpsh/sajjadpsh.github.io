@@ -49,6 +49,9 @@ type Program = { program: WebGLProgram; uniforms: Record<string, WebGLUniformLoc
 const MAX_STOPS = 5;
 const MAX_LAYERS = 3;
 const INTRO_SECONDS = 2.4;
+// Local change: the aurora drifts slowly, so 30 fps looks the same as 60 at half the GPU/main-thread cost.
+// The 3 ms slack absorbs rAF jitter so 60/120 Hz displays land on every 2nd/4th frame instead of dropping to 20 fps.
+const MIN_FRAME_MS = 1000 / 30 - 3;
 
 const VERTEX = `#version 300 es
 in vec2 aPosition;
@@ -393,6 +396,10 @@ const Aurora = ({
     const frame = (now: number) => {
       raf = 0;
       if (!visible || document.hidden) return;
+      if (last && now - last < MIN_FRAME_MS) {
+        raf = requestAnimationFrame(frame);
+        return;
+      }
       const s = settingsRef.current;
       const dt = last ? clamp((now - last) / 1000, 0.0005, 0.05) : 1 / 60;
       last = now;
@@ -416,7 +423,8 @@ const Aurora = ({
       if (!s.intro || reduce) state.reveal = 1;
       else if (state.reveal < 1) state.reveal = Math.min(1, state.reveal + dt / INTRO_SECONDS);
       render();
-      raf = requestAnimationFrame(frame);
+      // Local change: with reduced motion every frame is identical, so paint once; prop changes still repaint via wakeRef.
+      if (!reduce) raf = requestAnimationFrame(frame);
     };
 
     const wake = () => {

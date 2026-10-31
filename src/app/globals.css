@@ -12,6 +12,16 @@ html:lang(ar) {
   --font-sans: 'Vazirmatn Variable', ui-sans-serif, system-ui, sans-serif;
 }
 
+/* Printing must never catch a scroll-reveal halfway. */
+@media print {
+  [data-hero],
+  [data-reveal],
+  [data-stagger] > * {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
 @layer components {
   .card {
     @apply rounded-2xl border border-black/5 bg-white dark:border-white/10 dark:bg-zinc-900;

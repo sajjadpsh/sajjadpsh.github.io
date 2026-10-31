@@ -63,10 +63,9 @@ export default function LocalePage({ locale }: { locale: Locale }) {
 
   return (
     <html lang={locale} dir={info.dir} suppressHydrationWarning>
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
-      </head>
       <body className="bg-white text-zinc-900 antialiased dark:bg-zinc-950 dark:text-zinc-100">
+        {/* First in <body>, not <head>: still runs before paint, without tripping hydration (React #418). */}
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         <div
           data-progress
           aria-hidden="true"
