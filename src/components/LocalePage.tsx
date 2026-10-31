@@ -18,6 +18,7 @@ const pageUrl = (locale: Locale) => `${SITE_URL}${localePath(locale)}`;
 
 export function localeMetadata(locale: Locale): Metadata {
   const { meta, profile } = getContent(locale);
+  const image = { url: `${SITE_URL}/og/${locale}.png`, width: 1200, height: 630, alt: meta.title }; // npm run og
   return {
     metadataBase: new URL(SITE_URL),
     title: meta.title,
@@ -36,8 +37,9 @@ export function localeMetadata(locale: Locale): Metadata {
       siteName: profile.name,
       locale,
       alternateLocale: locales.filter((l) => l !== locale),
+      images: [image],
     },
-    twitter: { card: 'summary', title: meta.title, description: meta.description },
+    twitter: { card: 'summary_large_image', title: meta.title, description: meta.description, images: [image] },
   };
 }
 
