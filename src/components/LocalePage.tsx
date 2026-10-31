@@ -3,7 +3,7 @@ import '@fontsource-variable/inter';
 import '@fontsource-variable/vazirmatn';
 import '@/app/globals.css';
 import { getContent, localeInfo, localePath, locales, defaultLocale, type Locale } from '@/lib/i18n';
-import { BASE_PATH, SITE_URL } from '@/lib/site';
+import { BASE_PATH, GOOGLE_SITE_VERIFICATION, SITE_URL } from '@/lib/site';
 import { buildJsonLd } from '@/lib/jsonLd';
 import { themeScript } from './ThemeToggle';
 import Header from './Header';
@@ -39,6 +39,7 @@ export function localeMetadata(locale: Locale): Metadata {
       alternateLocale: locales.filter((l) => l !== locale).map((l) => localeInfo[l].og),
       images: [image],
     },
+    verification: { google: GOOGLE_SITE_VERIFICATION },
     twitter: { card: 'summary_large_image', title: meta.title, description: meta.description, images: [image] },
   };
 }
