@@ -27,6 +27,7 @@
     "menu": "منو",
     "contact": "تماس",
     "visit": "مشاهده سایت",
+    "stack": "فناوری‌ها",
     "rights": "تمامی حقوق محفوظ است.",
     "backToTop": "بازگشت به بالا",
     "skip": "رفتن به محتوا"
@@ -39,7 +40,11 @@
     "location": "مشهد، ایران",
     "city": "مشهد",
     "countryCode": "IR",
-    "languageCodes": ["fa", "en", "fr"],
+    "languageCodes": [
+      "fa",
+      "en",
+      "fr"
+    ],
     "email": "sajjad.pishvaeian@live.com",
     "phone": "+98 (915) 239-8126",
     "links": [
@@ -68,7 +73,10 @@
             "فرانت‌اند",
             "BPMN",
             "QA"
-          ]
+          ],
+          "role": "توسعه‌دهنده فرانت‌اند، کارشناس BPMN و QA",
+          "start": "2025-05",
+          "end": "2025-07"
         },
         {
           "name": "Fintrum",
@@ -88,6 +96,10 @@
             "بازاریابی",
             "SaaS",
             "تحلیل داده"
+          ],
+          "stack": [
+            "Next.js",
+            "React"
           ]
         },
         {

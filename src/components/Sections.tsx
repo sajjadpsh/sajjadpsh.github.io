@@ -48,7 +48,24 @@ function Body({ section, intl, ui }: { section: SectionData } & Ctx) {
                 <p className="mt-1 text-sm text-indigo-600 dark:text-indigo-400" dir="ltr">
                   {new URL(p.url).host}
                 </p>
+                {(p.role || p.start) && (
+                  <p className="mt-2 text-sm font-medium">
+                    {[p.role, p.start && formatPeriod(p.start, p.end, intl, ui.present)].filter(Boolean).join(' · ')}
+                  </p>
+                )}
                 <p className="mt-3 text-zinc-600 dark:text-zinc-300">{p.description}</p>
+                {p.outcome && (
+                  <p className="mt-3 flex gap-2 text-sm font-medium text-emerald-700 dark:text-emerald-400">
+                    <span aria-hidden="true">✓</span>
+                    {p.outcome}
+                  </p>
+                )}
+                {p.stack?.length ? (
+                  <p className="mt-3 text-xs text-zinc-500 dark:text-zinc-400">
+                    <span className="sr-only">{ui.stack}: </span>
+                    {p.stack.join(' · ')}
+                  </p>
+                ) : null}
                 <div className="mt-4 flex flex-wrap items-center gap-2">
                   {p.tags?.map((t) => (
                     <span key={t} className="chip">
