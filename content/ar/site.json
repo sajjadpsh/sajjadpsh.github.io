@@ -27,6 +27,7 @@
     "menu": "القائمة",
     "contact": "تواصل",
     "visit": "زيارة الموقع",
+    "stack": "التقنيات",
     "rights": "جميع الحقوق محفوظة.",
     "backToTop": "العودة إلى الأعلى",
     "skip": "انتقل إلى المحتوى"
@@ -39,7 +40,11 @@
     "location": "مشهد، إيران",
     "city": "مشهد",
     "countryCode": "IR",
-    "languageCodes": ["fa", "en", "fr"],
+    "languageCodes": [
+      "fa",
+      "en",
+      "fr"
+    ],
     "email": "sajjad.pishvaeian@live.com",
     "phone": "+98 (915) 239-8126",
     "links": [
@@ -68,7 +73,10 @@
             "واجهات أمامية",
             "BPMN",
             "ضمان الجودة"
-          ]
+          ],
+          "role": "مطوّر واجهات أمامية، خبير BPMN، ضمان الجودة",
+          "start": "2025-05",
+          "end": "2025-07"
         },
         {
           "name": "Fintrum",
@@ -88,6 +96,10 @@
             "تسويق",
             "SaaS",
             "تحليلات"
+          ],
+          "stack": [
+            "Next.js",
+            "React"
           ]
         },
         {

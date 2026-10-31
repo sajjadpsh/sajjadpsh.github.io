@@ -28,7 +28,17 @@ export type TimelineItem = {
   bullets?: string[];
 };
 
-export type Project = { name: string; url: string; description: string; tags?: string[] };
+export type Project = {
+  name: string;
+  url: string;
+  description: string;
+  tags?: string[];
+  role?: string;
+  start?: string; // YYYY-MM
+  end?: string; // YYYY-MM, empty = present
+  stack?: string[];
+  outcome?: string;
+};
 /** knowsAbout: list these items as expertise in structured data (skip e.g. soft skills, spoken languages). */
 export type SkillGroup = { label: string; items: string[]; knowsAbout?: boolean };
 
@@ -51,6 +61,7 @@ export type Ui = {
   menu: string;
   contact: string;
   visit: string;
+  stack: string;
   rights: string;
   backToTop: string;
   skip: string;

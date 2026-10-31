@@ -53,6 +53,7 @@ collections:
               - { name: menu, label: Mobile menu, widget: string }
               - { name: contact, label: Contact heading, widget: string }
               - { name: visit, label: Visit project link, widget: string }
+              - { name: stack, label: '"Stack" label (projects, résumé)', widget: string }
               - { name: rights, label: Copyright text, widget: string }
               - { name: backToTop, label: Back-to-top button, widget: string }
               - { name: skip, label: Skip link, widget: string }
@@ -120,6 +121,11 @@ collections:
                       - { name: url, label: URL, widget: string, pattern: ['^https?://', 'Must start with http(s)://'] }
                       - { name: description, label: Description, widget: text }
                       - { name: tags, label: Tags, widget: list, required: false, field: { name: tag, label: Tag, widget: string } }
+                      - { name: role, label: Your role, widget: string, required: false }
+                      - { name: start, label: Start (YYYY-MM), widget: string, required: false, pattern: ['^(\d{4}-\d{2})?$', 'Use YYYY-MM'] }
+                      - { name: end, label: 'End (YYYY-MM, empty = present)', widget: string, required: false, pattern: ['^(\d{4}-\d{2})?$', 'Use YYYY-MM'] }
+                      - { name: stack, label: Tech stack, widget: list, required: false, field: { name: tech, label: Technology, widget: string } }
+                      - { name: outcome, label: 'Outcome (result, ideally with a number)', widget: text, required: false }
               - name: skills
                 label: Skills
                 widget: object

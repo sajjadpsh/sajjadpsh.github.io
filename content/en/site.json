@@ -27,6 +27,7 @@
     "menu": "Menu",
     "contact": "Contact",
     "visit": "Visit site",
+    "stack": "Stack",
     "rights": "All rights reserved.",
     "backToTop": "Back to top",
     "skip": "Skip to content"
@@ -39,7 +40,11 @@
     "location": "Mashhad, Iran",
     "city": "Mashhad",
     "countryCode": "IR",
-    "languageCodes": ["fa", "en", "fr"],
+    "languageCodes": [
+      "fa",
+      "en",
+      "fr"
+    ],
     "email": "sajjad.pishvaeian@live.com",
     "phone": "+98 (915) 239-8126",
     "links": [
@@ -73,7 +78,10 @@
             "Front end",
             "BPMN",
             "QA"
-          ]
+          ],
+          "role": "Front End Developer, BPMN Expert, QA",
+          "start": "2025-05",
+          "end": "2026-10"
         },
         {
           "name": "Fintrum",
@@ -93,6 +101,10 @@
             "Marketing",
             "SaaS",
             "Analytics"
+          ],
+          "stack": [
+            "Next.js",
+            "React"
           ]
         },
         {

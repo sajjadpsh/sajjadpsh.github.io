@@ -31,8 +31,11 @@ export function toBlocks({ profile, ui, sections }: Content, intl: string): Bloc
       }
     } else if (s.type === 'projects') {
       for (const p of s.items) {
-        blocks.push({ kind: 'entry', text: `${p.name} — ${p.url}` });
+        const right = p.start ? formatPeriod(p.start, p.end, intl, ui.present) : undefined;
+        blocks.push({ kind: 'entry', text: [p.name, p.role, p.url].filter(Boolean).join(' — '), right });
         blocks.push({ kind: 'bullet', text: p.description });
+        if (p.outcome) blocks.push({ kind: 'bullet', text: p.outcome });
+        if (p.stack?.length) blocks.push({ kind: 'bullet', text: `${ui.stack}: ${p.stack.join(', ')}` });
       }
     } else if (s.type === 'skills') {
       for (const g of s.groups) blocks.push({ kind: 'para', text: `${g.label}: ${g.items.join(', ')}` });
