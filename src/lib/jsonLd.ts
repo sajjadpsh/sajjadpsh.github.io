@@ -56,6 +56,7 @@ export function buildJsonLd({ content, defaultContent, locale, locales, intl, si
         jobTitle: profile.headline,
         hasOccupation: { '@type': 'Occupation', name: profile.headline },
         description: profile.summary,
+        image: profile.photo ? `${siteUrl}${profile.photo}` : undefined,
         email: profile.email,
         address: {
           '@type': 'PostalAddress',

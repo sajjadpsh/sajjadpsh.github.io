@@ -7,6 +7,8 @@ export type Profile = {
   /** Full legal name used on the downloaded résumé; falls back to `name`. */
   resumeName?: string;
   headline: string;
+  /** Square headshot under public/, e.g. /uploads/me.jpg (also used for og cards and JSON-LD). */
+  photo?: string;
   summary: string;
   location: string;
   /** Structured-data address parts; `location` stays the display string. */

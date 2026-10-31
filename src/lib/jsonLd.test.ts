@@ -7,7 +7,7 @@ const base = (name: string, extra: object = {}) =>
   ({
     meta: { title: `${name} - Dev`, description: '' },
     ui: {},
-    profile: { name, headline: 'Dev', summary: 'Hi', location: 'Mashhad, Iran', city: 'Mashhad', countryCode: 'IR', email: 'a@b.io', languageCodes: ['fa', 'en'], links: [{ label: 'GH', url: 'https://github.com/x' }], ...extra },
+    profile: { name, headline: 'Dev', photo: '/uploads/me.jpg', summary: 'Hi', location: 'Mashhad, Iran', city: 'Mashhad', countryCode: 'IR', email: 'a@b.io', languageCodes: ['fa', 'en'], links: [{ label: 'GH', url: 'https://github.com/x' }], ...extra },
     sections: [
       { type: 'projects', id: 'projects', title: 'P', items: [{ name: 'Trax Loop', url: 'https://t.io', description: 'd' }] },
       { type: 'timeline', id: 'education', title: 'E', items: [{ title: 'BSc', org: 'AUT', start: '2016-09' }] },
@@ -32,6 +32,7 @@ test('buildJsonLd shares one Person across locales and pulls fields from content
   assert.deepEqual(personEn.alternateName, ['Seyedsajjad Pishvaeian']);
   assert.deepEqual(personFa.alternateName, ['Sajjad Pishvaeian', 'Seyedsajjad Pishvaeian', 'سید سجاد پیشوائیان']);
   assert.equal(personEn.email, 'a@b.io');
+  assert.equal(personEn.image, 'https://x.io/uploads/me.jpg');
   assert.deepEqual(personEn.address, { '@type': 'PostalAddress', addressLocality: 'Mashhad', addressCountry: 'IR' });
   assert.deepEqual(personEn.alumniOf, [{ '@type': 'EducationalOrganization', name: 'AUT' }]);
   assert.deepEqual(personEn.knowsAbout, ['Vue.js']);

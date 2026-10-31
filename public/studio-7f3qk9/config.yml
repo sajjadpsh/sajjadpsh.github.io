@@ -66,6 +66,7 @@ collections:
               - { name: name, label: Display name, widget: string }
               - { name: resumeName, label: Full name on résumé (optional), widget: string, required: false }
               - { name: headline, label: Headline, widget: string }
+              - { name: photo, label: 'Photo (square; rerun npm run og after changing)', widget: image, required: false, i18n: duplicate }
               - { name: summary, label: Summary, widget: text }
               - { name: location, label: Location, widget: string }
               - { name: city, label: City (structured data), widget: string, required: false }
