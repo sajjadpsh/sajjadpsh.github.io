@@ -67,6 +67,9 @@ collections:
               - { name: headline, label: Headline, widget: string }
               - { name: summary, label: Summary, widget: text }
               - { name: location, label: Location, widget: string }
+              - { name: city, label: City (structured data), widget: string, required: false }
+              - { name: countryCode, label: 'Country code (ISO, e.g. IR)', widget: string, required: false, pattern: ['^[A-Z]{2}$', 'Two capital letters'] }
+              - { name: languageCodes, label: 'Spoken language codes (e.g. fa, en)', widget: list, required: false, field: { name: code, label: Code, widget: string } }
               - { name: email, label: Email, widget: string }
               - { name: phone, label: Phone, widget: string, required: false }
               - name: links
@@ -132,6 +135,7 @@ collections:
                     fields:
                       - { name: label, label: Group, widget: string }
                       - { name: items, label: Items, widget: list, field: { name: item, label: Item, widget: string } }
+                      - { name: knowsAbout, label: List as expertise in structured data, widget: boolean, required: false, default: false }
               - name: text
                 label: Free text
                 widget: object

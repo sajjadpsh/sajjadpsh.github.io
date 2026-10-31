@@ -37,6 +37,9 @@
     "headline": "Développeur full stack & ingénieur logiciel",
     "summary": "Diplômé en informatique de l'Université de technologie Amirkabir, je conçois des applications web rapides et maintenables avec Nuxt.js, Vue.js, Node.js et Laravel — des tableaux de bord IoT aux plateformes logistiques et fintech. J'attache de l'importance aux interfaces claires, aux processus solides (BPMN, QA) et à l'amélioration continue.",
     "location": "Mashhad, Iran",
+    "city": "Mashhad",
+    "countryCode": "IR",
+    "languageCodes": ["fa", "en", "fr"],
     "email": "sajjad.pishvaeian@live.com",
     "phone": "+98 (915) 239-8126",
     "links": [
@@ -205,6 +208,7 @@
       "groups": [
         {
           "label": "Compétences techniques",
+          "knowsAbout": true,
           "items": [
             "Python",
             "JavaScript",
@@ -247,6 +251,7 @@
         },
         {
           "label": "Domaines de recherche",
+          "knowsAbout": true,
           "items": [
             "Apprentissage automatique",
             "Apprentissage profond",
