@@ -12,6 +12,19 @@ html:lang(ar) {
   --font-sans: 'Vazirmatn Variable', ui-sans-serif, system-ui, sans-serif;
 }
 
+/* SplitText hides its heading until the letters are split. Only when JS runs (`js` class from the
+   inline theme script), and never for more than 3 s, so raw-HTML readers and failed scripts still see it. */
+.js .split-parent:not([data-ready]) {
+  visibility: hidden;
+  animation: split-failsafe 0s 3s forwards;
+}
+
+@keyframes split-failsafe {
+  to {
+    visibility: visible;
+  }
+}
+
 /* Printing must never catch a scroll-reveal halfway. */
 @media print {
   [data-hero],

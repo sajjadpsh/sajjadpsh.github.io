@@ -1,7 +1,8 @@
 'use client';
 
 // Runs in <head> before paint so the page never flashes the wrong theme.
-export const themeScript = `try{var t=localStorage.getItem('theme');if(t==='dark'||(!t&&matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark')}catch(e){}`;
+// Also marks <html> with `js`, so styles that hide content until a script runs never apply without JS.
+export const themeScript = `document.documentElement.classList.add('js');try{var t=localStorage.getItem('theme');if(t==='dark'||(!t&&matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark')}catch(e){}`;
 
 export default function ThemeToggle({ label }: { label: string }) {
   const toggle = () => {
