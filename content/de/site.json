@@ -2,7 +2,18 @@
   "meta": {
     "title": "Sajjad Pishvaeian - Full-Stack- & Frontend-Entwickler",
     "description": "Portfolio und Lebenslauf von Sajjad Pishvaeian, Full-Stack- und Frontend-Entwickler (Nuxt.js, Vue.js, Node.js, Laravel) und Informatik-Absolvent der Technischen Universität Amirkabir.",
-    "keywords": ["Seyedsajjad Pishvaeian", "Sajjad Pishvaeian", "Full-Stack-Entwickler", "Frontend-Entwickler", "Nuxt.js", "Vue.js", "Node.js", "Laravel", "Portfolio", "Lebenslauf"]
+    "keywords": [
+      "Seyedsajjad Pishvaeian",
+      "Sajjad Pishvaeian",
+      "Full-Stack-Entwickler",
+      "Frontend-Entwickler",
+      "Nuxt.js",
+      "Vue.js",
+      "Node.js",
+      "Laravel",
+      "Portfolio",
+      "Lebenslauf"
+    ]
   },
   "ui": {
     "summary": "Profil",
@@ -29,8 +40,14 @@
     "email": "sajjad.pishvaeian@live.com",
     "phone": "+98 (915) 239-8126",
     "links": [
-      { "label": "LinkedIn", "url": "https://linkedin.com/in/Sajjad-pishvaeian" },
-      { "label": "GitHub", "url": "https://github.com/sajjadpsh" }
+      {
+        "label": "LinkedIn",
+        "url": "https://linkedin.com/in/Sajjad-pishvaeian"
+      },
+      {
+        "label": "GitHub",
+        "url": "https://github.com/sajjadpsh"
+      }
     ]
   },
   "sections": [
@@ -43,25 +60,42 @@
           "name": "CMR Docs",
           "url": "https://cmrdocs.com/en",
           "description": "Online-Logistikplattform für Straßenfrachtpapiere: Erstellung von CMR-Frachtbriefen, Transitvisa-Anträge, Konnossement-Anfragen und weitere Logistikprozesse an einem Ort.",
-          "tags": ["Logistik", "Frontend", "BPMN", "QA"]
+          "tags": [
+            "Logistik",
+            "Frontend",
+            "BPMN",
+            "QA"
+          ]
         },
         {
           "name": "Fintrum",
           "url": "https://fintrum.ca",
           "description": "KI-gestützte Entscheidungsplattform für Optionshändler mit Echtzeitanalyse der Griechen, Orderflow-Analysen und disziplinierter Strategieausführung — jeder Strike und jeder Verfall in einer klaren Ansicht.",
-          "tags": ["Fintech", "KI", "Trading"]
+          "tags": [
+            "Fintech",
+            "KI",
+            "Trading"
+          ]
         },
         {
           "name": "ChaparHub",
           "url": "https://chaparhub.com",
           "description": "Hub für Publishing und Marketing-Operations: einmal verfassen, auf zwölf Kanälen veröffentlichen — von Instagram, LinkedIn und YouTube bis Telegram, WhatsApp und Google Business Profile — Kampagnen planen, Budget und Funnel verfolgen und Umsätze an Kunden berichten.",
-          "tags": ["Marketing", "SaaS", "Analytics"]
+          "tags": [
+            "Marketing",
+            "SaaS",
+            "Analytics"
+          ]
         },
         {
           "name": "TraxLoop",
           "url": "https://traxloop.com/",
           "description": "Der überprüfbare Datensatz für den grenzüberschreitenden Handel: Aufträge, Sendungen, Transportdokumente, Zollanmeldungen, Handelsfinanzierung und Carrier-Tracking in einem manipulationssicheren, gemeinsamen Datensatz mit SHA-256-versiegelten Revisionen und signierten Dokumenten.",
-          "tags": ["Handel", "Logistik", "Sicherheit"]
+          "tags": [
+            "Handel",
+            "Logistik",
+            "Sicherheit"
+          ]
         }
       ]
     },
@@ -76,7 +110,9 @@
           "location": "Maschhad, Iran",
           "start": "2025-05",
           "end": "2025-07",
-          "bullets": ["Entwicklung von cmrdocs.com, einer Plattform für CMR-Erstellung, Transitvisa-Anträge, Konnossement-Anfragen und weitere Logistikprozesse."]
+          "bullets": [
+            "Entwicklung von cmrdocs.com, einer Plattform für CMR-Erstellung, Transitvisa-Anträge, Konnossement-Anfragen und weitere Logistikprozesse."
+          ]
         },
         {
           "title": "Full-Stack-Entwickler",
@@ -95,7 +131,9 @@
           "location": "Maschhad, Iran",
           "start": "2021-10",
           "end": "2022-10",
-          "bullets": ["Entwicklung der offiziellen Website und Webanwendung des Unternehmens mit Nuxt.js, Bootstrap, MySQL und Laravel (PHP)."]
+          "bullets": [
+            "Entwicklung der offiziellen Website und Webanwendung des Unternehmens mit Nuxt.js, Bootstrap, MySQL und Laravel (PHP)."
+          ]
         },
         {
           "title": "Tutor (Lehrassistent)",
@@ -103,7 +141,10 @@
           "location": "Teheran, Iran",
           "start": "2020-02",
           "end": "2021-02",
-          "bullets": ["Kurs: Rechnernetze", "Kurs: Grundlagen der Informationssicherheit"]
+          "bullets": [
+            "Kurs: Rechnernetze",
+            "Kurs: Grundlagen der Informationssicherheit"
+          ]
         },
         {
           "title": "Frontend-Entwickler",
@@ -111,7 +152,9 @@
           "location": "Teheran, Iran",
           "start": "2019-09",
           "end": "2020-06",
-          "bullets": ["Entwicklung der Website und Webanwendung des Labs mit Nuxt.js und Bootstrap."]
+          "bullets": [
+            "Entwicklung der Website und Webanwendung des Labs mit Nuxt.js und Bootstrap."
+          ]
         }
       ]
     },
@@ -162,19 +205,58 @@
       "groups": [
         {
           "label": "Technische Kenntnisse",
-          "items": ["Python", "JavaScript", "Java", "C/C++", "PHP", "Nuxt.js", "Vue.js", "WordPress", "Node.js", "Django", "FastAPI", "Git", "PostgreSQL", "MongoDB", "MySQL", "TensorFlow", "NumPy", "Pandas", "Scikit-learn"]
+          "items": [
+            "Python",
+            "JavaScript",
+            "Java",
+            "C/C++",
+            "PHP",
+            "Nuxt.js",
+            "Vue.js",
+            "WordPress",
+            "Node.js",
+            "Django",
+            "FastAPI",
+            "Git",
+            "PostgreSQL",
+            "MongoDB",
+            "MySQL",
+            "TensorFlow",
+            "NumPy",
+            "Pandas",
+            "Scikit-learn"
+          ]
         },
         {
           "label": "Persönliche Kompetenzen",
-          "items": ["Eigeninitiative und Problemlösung", "Kontinuierliche Verbesserung", "Teamarbeit", "Algorithmisches Denken", "Technische Präsentation"]
+          "items": [
+            "Eigeninitiative und Problemlösung",
+            "Kontinuierliche Verbesserung",
+            "Teamarbeit",
+            "Algorithmisches Denken",
+            "Technische Präsentation"
+          ]
         },
         {
           "label": "Sprachen",
-          "items": ["Persisch (Muttersprache)", "Englisch (B2)", "Französisch (B1)"]
+          "items": [
+            "Persisch (Muttersprache)",
+            "Englisch (B2)",
+            "Französisch (B1)"
+          ]
         },
         {
           "label": "Forschungsinteressen",
-          "items": ["Maschinelles Lernen", "Deep Learning", "Maschinelles Sehen", "Webentwicklung", "Daten-, Netzwerk- und Kommunikationssicherheit", "Internet der Dinge", "Cloud Computing", "Data Mining"]
+          "items": [
+            "Maschinelles Lernen",
+            "Deep Learning",
+            "Maschinelles Sehen",
+            "Webentwicklung",
+            "Daten-, Netzwerk- und Kommunikationssicherheit",
+            "Internet der Dinge",
+            "Cloud Computing",
+            "Data Mining"
+          ]
         }
       ]
     }

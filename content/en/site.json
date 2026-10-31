@@ -2,7 +2,18 @@
   "meta": {
     "title": "Sajjad Pishvaeian - Full Stack & Front End Developer",
     "description": "Portfolio and résumé of Sajjad Pishvaeian, a full stack and front end developer (Nuxt.js, Vue.js, Node.js, Laravel) and Computer Science graduate of Amirkabir University of Technology.",
-    "keywords": ["Seyedsajjad Pishvaeian", "Sajjad Pishvaeian", "Full Stack Developer", "Front End Developer", "Nuxt.js", "Vue.js", "Node.js", "Laravel", "Portfolio", "Resume"]
+    "keywords": [
+      "Seyedsajjad Pishvaeian",
+      "Sajjad Pishvaeian",
+      "Full Stack Developer",
+      "Front End Developer",
+      "Nuxt.js",
+      "Vue.js",
+      "Node.js",
+      "Laravel",
+      "Portfolio",
+      "Resume"
+    ]
   },
   "ui": {
     "summary": "Summary",
@@ -29,8 +40,18 @@
     "email": "sajjad.pishvaeian@live.com",
     "phone": "+98 (915) 239-8126",
     "links": [
-      { "label": "LinkedIn", "url": "https://linkedin.com/in/Sajjad-pishvaeian" },
-      { "label": "GitHub", "url": "https://github.com/sajjadpsh" }
+      {
+        "label": "LinkedIn",
+        "url": "https://linkedin.com/in/Sajjad-pishvaeian"
+      },
+      {
+        "label": "GitHub",
+        "url": "https://github.com/sajjadpsh"
+      },
+      {
+        "label": "Website",
+        "url": "https://sajjadpsh.github.io/"
+      }
     ]
   },
   "sections": [
@@ -38,30 +59,48 @@
       "type": "projects",
       "id": "projects",
       "title": "Projects",
+      "hidden": false,
       "items": [
         {
           "name": "CMR Docs",
           "url": "https://cmrdocs.com/en",
           "description": "Online logistics platform for road-freight paperwork: CMR consignment note generation, transit visa applications, bill of lading requests and other logistics operations in one place.",
-          "tags": ["Logistics", "Front end", "BPMN", "QA"]
+          "tags": [
+            "Logistics",
+            "Front end",
+            "BPMN",
+            "QA"
+          ]
         },
         {
           "name": "Fintrum",
           "url": "https://fintrum.ca",
           "description": "AI-powered decision-support platform for options traders, with real-time analysis of the greeks, order-flow analytics and disciplined strategy execution — every strike and every expiry in one clear view.",
-          "tags": ["Fintech", "AI", "Trading"]
+          "tags": [
+            "Fintech",
+            "AI",
+            "Trading"
+          ]
         },
         {
           "name": "ChaparHub",
           "url": "https://chaparhub.com",
           "description": "Publishing and marketing operations hub: compose once for twelve channels — from Instagram, LinkedIn and YouTube to Telegram, WhatsApp and Google Business Profile — then plan campaigns, track spend and funnel, and report revenue to clients.",
-          "tags": ["Marketing", "SaaS", "Analytics"]
+          "tags": [
+            "Marketing",
+            "SaaS",
+            "Analytics"
+          ]
         },
         {
           "name": "TraxLoop",
           "url": "https://traxloop.com/",
           "description": "The verifiable record for cross-border trade: orders, shipments, transport documents, customs filings, trade finance and carrier tracking on one tamper-evident record shared by every party, with SHA-256 sealed revisions and signed documents.",
-          "tags": ["Trade", "Logistics", "Security"]
+          "tags": [
+            "Trade",
+            "Logistics",
+            "Security"
+          ]
         }
       ]
     },
@@ -69,14 +108,17 @@
       "type": "timeline",
       "id": "experience",
       "title": "Experience",
+      "hidden": false,
       "items": [
         {
           "title": "Front End Developer, BPMN Expert, QA",
           "org": "Rah Gostar Hoshmand Zhav",
           "location": "Mashhad, Iran",
           "start": "2025-05",
-          "end": "2025-07",
-          "bullets": ["Developed cmrdocs.com, a platform providing CMR generation, transit visa applications, bill of lading requests and other logistics operations."]
+          "end": "2026-10",
+          "bullets": [
+            "Developed cmrdocs.com, a platform providing CMR generation, transit visa applications, bill of lading requests and other logistics operations."
+          ]
         },
         {
           "title": "Full Stack Developer",
@@ -95,7 +137,9 @@
           "location": "Mashhad, Iran",
           "start": "2021-10",
           "end": "2022-10",
-          "bullets": ["Developed the company's official website and web application with Nuxt.js, Bootstrap, MySQL and Laravel (PHP)."]
+          "bullets": [
+            "Developed the company's official website and web application with Nuxt.js, Bootstrap, MySQL and Laravel (PHP)."
+          ]
         },
         {
           "title": "Teaching Assistant",
@@ -103,7 +147,10 @@
           "location": "Tehran, Iran",
           "start": "2020-02",
           "end": "2021-02",
-          "bullets": ["Course: Computer Networks", "Course: Principles of Information Security"]
+          "bullets": [
+            "Course: Computer Networks",
+            "Course: Principles of Information Security"
+          ]
         },
         {
           "title": "Front End Developer",
@@ -111,7 +158,9 @@
           "location": "Tehran, Iran",
           "start": "2019-09",
           "end": "2020-06",
-          "bullets": ["Developed the lab's website and web application with Nuxt.js and Bootstrap."]
+          "bullets": [
+            "Developed the lab's website and web application with Nuxt.js and Bootstrap."
+          ]
         }
       ]
     },
@@ -119,6 +168,7 @@
       "type": "timeline",
       "id": "education",
       "title": "Education",
+      "hidden": false,
       "items": [
         {
           "title": "Bachelor of Engineering, Computer Science",
@@ -137,21 +187,24 @@
           "org": "Hasheminejad 1 High School (National Organization for Development of Exceptional Talents)",
           "location": "Mashhad, Iran",
           "start": "2012-09",
-          "end": "2016-09"
+          "end": "2016-09",
+          "bullets": []
         },
         {
           "title": "Middle School",
           "org": "Besat Middle School",
           "location": "Mashhad, Iran",
           "start": "2009-09",
-          "end": "2012-09"
+          "end": "2012-09",
+          "bullets": []
         },
         {
           "title": "Elementary School",
           "org": "Omid Elementary School",
           "location": "Mashhad, Iran",
           "start": "2004-09",
-          "end": "2009-09"
+          "end": "2009-09",
+          "bullets": []
         }
       ]
     },
@@ -159,22 +212,62 @@
       "type": "skills",
       "id": "skills",
       "title": "Skills & Interests",
+      "hidden": false,
       "groups": [
         {
           "label": "Technical skills",
-          "items": ["Python", "JavaScript", "Java", "C/C++", "PHP", "Nuxt.js", "Vue.js", "WordPress", "Node.js", "Django", "FastAPI", "Git", "PostgreSQL", "MongoDB", "MySQL", "TensorFlow", "NumPy", "Pandas", "Scikit-learn"]
+          "items": [
+            "Python",
+            "JavaScript",
+            "Java",
+            "C/C++",
+            "PHP",
+            "Nuxt.js",
+            "Vue.js",
+            "WordPress",
+            "Node.js",
+            "Django",
+            "FastAPI",
+            "Git",
+            "PostgreSQL",
+            "MongoDB",
+            "MySQL",
+            "TensorFlow",
+            "NumPy",
+            "Pandas",
+            "Scikit-learn"
+          ]
         },
         {
           "label": "Personal skills",
-          "items": ["Initiative and problem solving", "Continuous improvement", "Teamwork", "Algorithmic thinking", "Technical presentation"]
+          "items": [
+            "Initiative and problem solving",
+            "Continuous improvement",
+            "Teamwork",
+            "Algorithmic thinking",
+            "Technical presentation"
+          ]
         },
         {
           "label": "Languages",
-          "items": ["Persian (native)", "English (B2)", "French (B1)"]
+          "items": [
+            "Persian (native)",
+            "English (B2)",
+            "French (B1)"
+          ]
         },
         {
           "label": "Research interests",
-          "items": ["Machine learning", "Deep learning", "Machine vision", "Web development", "Data, network and communication security", "Internet of Things", "Cloud computing", "Data mining"]
+          "items": [
+            "Machine learning",
+            "Deep learning",
+            "Machine vision",
+            "Web development",
+            "Data, network and communication security",
+            "Internet of Things",
+            "Cloud computing",
+            "Data mining"
+          ]
         }
       ]
     }

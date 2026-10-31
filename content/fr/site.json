@@ -2,7 +2,18 @@
   "meta": {
     "title": "Sajjad Pishvaeian - Développeur full stack & front-end",
     "description": "Portfolio et CV de Sajjad Pishvaeian, développeur full stack et front-end (Nuxt.js, Vue.js, Node.js, Laravel), diplômé en informatique de l'Université de technologie Amirkabir.",
-    "keywords": ["Seyedsajjad Pishvaeian", "Sajjad Pishvaeian", "Développeur full stack", "Développeur front-end", "Nuxt.js", "Vue.js", "Node.js", "Laravel", "Portfolio", "CV"]
+    "keywords": [
+      "Seyedsajjad Pishvaeian",
+      "Sajjad Pishvaeian",
+      "Développeur full stack",
+      "Développeur front-end",
+      "Nuxt.js",
+      "Vue.js",
+      "Node.js",
+      "Laravel",
+      "Portfolio",
+      "CV"
+    ]
   },
   "ui": {
     "summary": "Profil",
@@ -29,8 +40,14 @@
     "email": "sajjad.pishvaeian@live.com",
     "phone": "+98 (915) 239-8126",
     "links": [
-      { "label": "LinkedIn", "url": "https://linkedin.com/in/Sajjad-pishvaeian" },
-      { "label": "GitHub", "url": "https://github.com/sajjadpsh" }
+      {
+        "label": "LinkedIn",
+        "url": "https://linkedin.com/in/Sajjad-pishvaeian"
+      },
+      {
+        "label": "GitHub",
+        "url": "https://github.com/sajjadpsh"
+      }
     ]
   },
   "sections": [
@@ -43,25 +60,42 @@
           "name": "CMR Docs",
           "url": "https://cmrdocs.com/en",
           "description": "Plateforme logistique en ligne pour les documents de transport routier : génération de lettres de voiture CMR, demandes de visa de transit, demandes de connaissement et autres opérations logistiques au même endroit.",
-          "tags": ["Logistique", "Front-end", "BPMN", "QA"]
+          "tags": [
+            "Logistique",
+            "Front-end",
+            "BPMN",
+            "QA"
+          ]
         },
         {
           "name": "Fintrum",
           "url": "https://fintrum.ca",
           "description": "Plateforme d'aide à la décision propulsée par l'IA pour les traders d'options : analyse en temps réel des grecques, analyse du flux d'ordres et exécution disciplinée des stratégies — chaque strike et chaque échéance en une vue claire.",
-          "tags": ["Fintech", "IA", "Trading"]
+          "tags": [
+            "Fintech",
+            "IA",
+            "Trading"
+          ]
         },
         {
           "name": "ChaparHub",
           "url": "https://chaparhub.com",
           "description": "Hub de publication et d'opérations marketing : rédigez une fois pour douze canaux — d'Instagram, LinkedIn et YouTube à Telegram, WhatsApp et Google Business Profile — puis planifiez les campagnes, suivez budget et entonnoir, et rendez compte des revenus aux clients.",
-          "tags": ["Marketing", "SaaS", "Analytique"]
+          "tags": [
+            "Marketing",
+            "SaaS",
+            "Analytique"
+          ]
         },
         {
           "name": "TraxLoop",
           "url": "https://traxloop.com/",
           "description": "Le registre vérifiable du commerce international : commandes, expéditions, documents de transport, déclarations en douane, financement du commerce et suivi des transporteurs sur un registre infalsifiable partagé par toutes les parties, avec révisions scellées SHA-256 et documents signés.",
-          "tags": ["Commerce", "Logistique", "Sécurité"]
+          "tags": [
+            "Commerce",
+            "Logistique",
+            "Sécurité"
+          ]
         }
       ]
     },
@@ -76,7 +110,9 @@
           "location": "Mashhad, Iran",
           "start": "2025-05",
           "end": "2025-07",
-          "bullets": ["Développement de cmrdocs.com, une plateforme offrant la génération de CMR, les demandes de visa de transit, les demandes de connaissement et d'autres opérations logistiques."]
+          "bullets": [
+            "Développement de cmrdocs.com, une plateforme offrant la génération de CMR, les demandes de visa de transit, les demandes de connaissement et d'autres opérations logistiques."
+          ]
         },
         {
           "title": "Développeur full stack",
@@ -95,7 +131,9 @@
           "location": "Mashhad, Iran",
           "start": "2021-10",
           "end": "2022-10",
-          "bullets": ["Développement du site officiel et de l'application web de l'entreprise avec Nuxt.js, Bootstrap, MySQL et Laravel (PHP)."]
+          "bullets": [
+            "Développement du site officiel et de l'application web de l'entreprise avec Nuxt.js, Bootstrap, MySQL et Laravel (PHP)."
+          ]
         },
         {
           "title": "Assistant d'enseignement",
@@ -103,7 +141,10 @@
           "location": "Téhéran, Iran",
           "start": "2020-02",
           "end": "2021-02",
-          "bullets": ["Cours : Réseaux informatiques", "Cours : Principes de la sécurité de l'information"]
+          "bullets": [
+            "Cours : Réseaux informatiques",
+            "Cours : Principes de la sécurité de l'information"
+          ]
         },
         {
           "title": "Développeur front-end",
@@ -111,7 +152,9 @@
           "location": "Téhéran, Iran",
           "start": "2019-09",
           "end": "2020-06",
-          "bullets": ["Développement du site et de l'application web du laboratoire avec Nuxt.js et Bootstrap."]
+          "bullets": [
+            "Développement du site et de l'application web du laboratoire avec Nuxt.js et Bootstrap."
+          ]
         }
       ]
     },
@@ -162,19 +205,58 @@
       "groups": [
         {
           "label": "Compétences techniques",
-          "items": ["Python", "JavaScript", "Java", "C/C++", "PHP", "Nuxt.js", "Vue.js", "WordPress", "Node.js", "Django", "FastAPI", "Git", "PostgreSQL", "MongoDB", "MySQL", "TensorFlow", "NumPy", "Pandas", "Scikit-learn"]
+          "items": [
+            "Python",
+            "JavaScript",
+            "Java",
+            "C/C++",
+            "PHP",
+            "Nuxt.js",
+            "Vue.js",
+            "WordPress",
+            "Node.js",
+            "Django",
+            "FastAPI",
+            "Git",
+            "PostgreSQL",
+            "MongoDB",
+            "MySQL",
+            "TensorFlow",
+            "NumPy",
+            "Pandas",
+            "Scikit-learn"
+          ]
         },
         {
           "label": "Compétences personnelles",
-          "items": ["Esprit d'initiative et résolution de problèmes", "Amélioration continue", "Travail d'équipe", "Pensée algorithmique", "Présentation technique"]
+          "items": [
+            "Esprit d'initiative et résolution de problèmes",
+            "Amélioration continue",
+            "Travail d'équipe",
+            "Pensée algorithmique",
+            "Présentation technique"
+          ]
         },
         {
           "label": "Langues",
-          "items": ["Persan (langue maternelle)", "Anglais (B2)", "Français (B1)"]
+          "items": [
+            "Persan (langue maternelle)",
+            "Anglais (B2)",
+            "Français (B1)"
+          ]
         },
         {
           "label": "Domaines de recherche",
-          "items": ["Apprentissage automatique", "Apprentissage profond", "Vision par ordinateur", "Développement web", "Sécurité des données, des réseaux et des communications", "Internet des objets", "Cloud computing", "Fouille de données"]
+          "items": [
+            "Apprentissage automatique",
+            "Apprentissage profond",
+            "Vision par ordinateur",
+            "Développement web",
+            "Sécurité des données, des réseaux et des communications",
+            "Internet des objets",
+            "Cloud computing",
+            "Fouille de données"
+          ]
         }
       ]
     }
