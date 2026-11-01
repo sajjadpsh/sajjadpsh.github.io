@@ -12,10 +12,13 @@ type Props = {
   /** Static PDF built at deploy time (/resume/<locale>.pdf, English on fa/ar pages). */
   pdfHref: string;
   fileName: string;
+  /** Language of the static PDF, and its name in the page language when it differs (fa/ar pages get English). */
+  pdfLang: string;
+  pdfNote?: string;
 };
 
 /** Everyone gets the static PDF; .docx is offered only to visitors signed in to the CMS with push access. */
-export default function ResumeDownload({ ui, locale, intl, rtl, pdfHref, fileName }: Props) {
+export default function ResumeDownload({ ui, locale, intl, rtl, pdfHref, fileName, pdfLang, pdfNote }: Props) {
   const [canEdit, setCanEdit] = useState(false);
   const [busy, setBusy] = useState(false);
   useEffect(() => {
@@ -32,7 +35,10 @@ export default function ResumeDownload({ ui, locale, intl, rtl, pdfHref, fileNam
         import('@/lib/resume/docx'),
       ]);
       const a = document.createElement('a');
-      a.href = URL.createObjectURL(await renderDocx(toBlocks(getContent(locale), intl), rtl));
+      const { profile } = getContent(locale);
+      const author = profile.resumeName || profile.name;
+      const blocks = toBlocks(getContent(locale), intl, `${location.origin}${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/`);
+      a.href = URL.createObjectURL(await renderDocx(blocks, rtl, { title: `${author} – ${profile.headline}`, author }));
       a.download = `${fileName}.docx`;
       a.click();
       setTimeout(() => URL.revokeObjectURL(a.href), 1000);
@@ -43,11 +49,11 @@ export default function ResumeDownload({ ui, locale, intl, rtl, pdfHref, fileNam
 
   return (
     <div className="flex flex-wrap items-center gap-3">
-      <a className="btn-primary" href={pdfHref} download={`${fileName}.pdf`} type="application/pdf">
+      <a className="btn-primary" href={pdfHref} download={`${fileName}.pdf`} type="application/pdf" hrefLang={pdfLang}>
         <svg viewBox="0 0 24 24" className="size-5" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
           <path d="M12 3v12m0 0-4-4m4 4 4-4M5 21h14" />
         </svg>
-        {`${ui.downloadResume} · ${ui.pdf}`}
+        {`${ui.downloadResume} · ${ui.pdf}${pdfNote ? ` (${pdfNote})` : ''}`}
       </a>
       {canEdit && (
         <button type="button" className="btn-ghost" onClick={downloadDocx} disabled={busy}>

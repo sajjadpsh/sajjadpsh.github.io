@@ -10,8 +10,12 @@ export type Block =
   | { kind: 'entry'; text: string; right?: string }
   | { kind: 'bullet'; text: string };
 
-export function toBlocks({ profile, ui, sections }: Content, intl: string): Block[] {
-  const contact = [profile.location, profile.email, profile.phone, ...profile.links.map((l) => l.url)];
+/** `siteUrl` is always listed in the contact line (unless a profile link already is the site). */
+export function toBlocks({ profile, ui, sections }: Content, intl: string, siteUrl?: string): Block[] {
+  const urls = profile.links.map((l) => l.url);
+  const bare = (u: string) => u.replace(/\/+$/, '');
+  if (siteUrl && !urls.some((u) => bare(u) === bare(siteUrl))) urls.push(siteUrl);
+  const contact = [profile.location, profile.email, profile.phone, ...urls];
   const blocks: Block[] = [
     { kind: 'name', text: profile.resumeName || profile.name },
     { kind: 'para', text: profile.headline },

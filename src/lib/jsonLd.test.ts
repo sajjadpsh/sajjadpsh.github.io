@@ -34,7 +34,7 @@ test('buildJsonLd shares one Person across locales and pulls fields from content
   assert.equal(personEn.email, 'a@b.io');
   assert.equal(personEn.image, 'https://x.io/uploads/me.jpg');
   assert.deepEqual(personEn.address, { '@type': 'PostalAddress', addressLocality: 'Mashhad', addressCountry: 'IR' });
-  assert.deepEqual(personEn.alumniOf, { '@type': 'EducationalOrganization', name: 'AUT' });
+  assert.deepEqual(personEn.alumniOf, { '@type': 'CollegeOrUniversity', name: 'AUT' });
   assert.deepEqual(personEn.sameAs, ['https://github.com/x']); // self link dropped
   assert.deepEqual(personEn.knowsAbout, ['Vue.js']);
   assert.deepEqual(personEn.knowsLanguage[1], { '@type': 'Language', name: 'English', alternateName: 'en' });

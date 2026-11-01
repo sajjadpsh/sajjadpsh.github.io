@@ -321,6 +321,13 @@ const Aurora = ({
       stencil: false
     });
     if (!container || !canvas || !gl) return undefined;
+    // Local change: software GL (no GPU) can't run the shader without minutes of main-thread work; bail before
+    // compiling it. HeroBackground paints a static CSS gradient underneath, so the hero still has its glow.
+    const info = gl.getExtension('WEBGL_debug_renderer_info');
+    if (/swiftshader|llvmpipe|softpipe|software|basic render/i.test(info ? String(gl.getParameter(info.UNMASKED_RENDERER_WEBGL)) : '')) {
+      gl.getExtension('WEBGL_lose_context')?.loseContext();
+      return undefined;
+    }
 
     const program = link(gl);
     if (!program) return undefined;
@@ -366,8 +373,13 @@ const Aurora = ({
     let raf = 0;
     let last = 0;
     let visible = true;
-    // Local change: governor. A device that can't hold ~20 fps over the first 45 frames gets a still frame.
+    // Local change: governor. A device that can't hold ~20 fps over its first 10 frames gets a still frame.
     const perf = { frames: 0, time: 0, degraded: false };
+    // Local change: low-end or data-saving devices get one still frame instead of a stuttering loop.
+    const nav = navigator as Navigator & { deviceMemory?: number; connection?: { saveData?: boolean } };
+    if (nav.hardwareConcurrency <= 2 || (nav.deviceMemory ?? 8) <= 2 || nav.connection?.saveData) {
+      perf.degraded = true;
+    }
 
     const render = () => {
       const s = settingsRef.current;
@@ -402,9 +414,9 @@ const Aurora = ({
         raf = requestAnimationFrame(frame);
         return;
       }
-      if (last && !perf.degraded && perf.frames < 45) {
+      if (last && !perf.degraded && perf.frames < 10) {
         perf.time += now - last;
-        if (++perf.frames === 45 && perf.time / 45 > 50) perf.degraded = true;
+        if (++perf.frames === 10 && perf.time / 10 > 50) perf.degraded = true;
       }
       if (perf.degraded) {
         state.reveal = 1;

@@ -22,18 +22,23 @@ export function HeroBackground() {
     const id = requestIdleCallback(() => setIdle(true), { timeout: 2000 });
     return () => cancelIdleCallback(id);
   }, []);
-  if (!idle) return null;
   return (
-    <div className="pointer-events-none absolute inset-0 -z-10" aria-hidden="true">
-      {/* No remount key: Aurora applies theme props live; dpr 1 because the soft gradient looks identical. */}
-      <Aurora
-        dpr={1}
-        colorStops={['#6366f1', '#06b6d4', '#a855f7']}
-        lightMode={!dark}
-        opacity={dark ? 0.8 : 0.9}
-        amplitude={1}
-        speed={0.6}
-      />
+    // The CSS gradient is the static glow from first paint (and all that software-GL devices get); the WebGL
+    // aurora fades in over it once the browser is idle.
+    <div
+      className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(45%_55%_at_15%_0%,rgb(99_102_241/0.28),transparent_70%),radial-gradient(45%_50%_at_55%_0%,rgb(6_182_212/0.24),transparent_70%),radial-gradient(40%_45%_at_95%_5%,rgb(168_85_247/0.24),transparent_70%)]"
+      aria-hidden="true"
+    >
+      {idle && (
+        <Aurora
+          dpr={1} // a soft gradient looks the same at 1x, for a quarter of the pixels
+          colorStops={['#6366f1', '#06b6d4', '#a855f7']}
+          lightMode={!dark}
+          opacity={dark ? 0.8 : 0.9}
+          amplitude={1}
+          speed={0.6}
+        />
+      )}
     </div>
   );
 }

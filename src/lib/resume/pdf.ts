@@ -2,9 +2,12 @@ import { jsPDF } from 'jspdf';
 import type { Block } from './blocks';
 
 // Built-in Helvetica keeps the PDF text-selectable for ATS parsers but only covers Latin scripts,
-// so callers pass Latin-script content (see ResumeDownload).
-export function renderPdf(blocks: Block[]): Blob {
+// so callers pass Latin-script content (see src/app/resume/[file]/route.ts).
+/** `meta` fills the PDF's document properties (title/author shown by viewers, ATS tools and search engines). */
+export function renderPdf(blocks: Block[], meta: { title: string; author: string; subject: string; lang: string }): Blob {
   const doc = new jsPDF({ unit: 'pt', format: 'a4' });
+  doc.setProperties({ title: meta.title, author: meta.author, subject: meta.subject, creator: meta.author });
+  doc.setLanguage(meta.lang as Parameters<typeof doc.setLanguage>[0]);
   const margin = 50;
   const width = doc.internal.pageSize.getWidth() - margin * 2;
   const bottom = doc.internal.pageSize.getHeight() - margin;

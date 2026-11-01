@@ -1,8 +1,17 @@
 import type { Section as SectionData, Ui } from '@/lib/content';
-import { formatPeriod } from '@/lib/period';
+import { formatMonth } from '@/lib/period';
 import { GlowCard } from './Effects';
 
 type Ctx = { intl: string; ui: Ui };
+
+/** Machine-readable dates (<time datetime="2025-05">) for a "start – end/present" range. */
+function Period({ start, end, intl, present }: { start: string; end?: string; intl: string; present: string }) {
+  return (
+    <>
+      <time dateTime={start}>{formatMonth(start, intl)}</time> – {end ? <time dateTime={end}>{formatMonth(end, intl)}</time> : present}
+    </>
+  );
+}
 
 // One renderer per section `type`. To add a type: extend Section in lib/content.ts,
 // add a case here and a matching entry in the CMS config.
@@ -19,7 +28,7 @@ function Body({ section, intl, ui }: { section: SectionData } & Ctx) {
               <span data-dot className="absolute -start-[30px] top-1.5 size-3 rounded-full bg-gradient-to-br from-indigo-500 to-cyan-500 ring-4 ring-white dark:ring-zinc-950" />
               <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
                 <h3 className="text-lg font-semibold">{item.title}</h3>
-                <span className="text-sm text-zinc-500 tabular-nums dark:text-zinc-400">{formatPeriod(item.start, item.end, intl, ui.present)}</span>
+                <span className="text-sm text-zinc-500 tabular-nums dark:text-zinc-400"><Period start={item.start} end={item.end} intl={intl} present={ui.present} /></span>
               </div>
               <p className="text-sm text-indigo-600 dark:text-indigo-400">{[item.org, item.location].filter(Boolean).join(' · ')}</p>
               {item.bullets?.length ? (
@@ -50,7 +59,9 @@ function Body({ section, intl, ui }: { section: SectionData } & Ctx) {
                 </p>
                 {(p.role || p.start) && (
                   <p className="mt-2 text-sm font-medium">
-                    {[p.role, p.start && formatPeriod(p.start, p.end, intl, ui.present)].filter(Boolean).join(' · ')}
+                    {p.role}
+                    {p.role && p.start && ' · '}
+                    {p.start && <Period start={p.start} end={p.end} intl={intl} present={ui.present} />}
                   </p>
                 )}
                 <p className="mt-3 text-zinc-600 dark:text-zinc-300">{p.description}</p>
