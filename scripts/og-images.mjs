@@ -1,4 +1,4 @@
-// Renders the 1200x630 social-preview cards (public/og/<locale>.png) from content + headshot.
+// Renders the 1200x630 social-preview cards (public/og/<locale>.jpg) from content + headshot.
 // Rerun after changing the name, headline or photo: `npm run og` (needs Playwright with Chromium:
 // `npx playwright install chromium`). The PNGs are committed, so CI never needs a browser.
 import { createRequire } from 'node:module';
@@ -45,7 +45,8 @@ for (const locale of readdirSync(join(root, 'content'))) {
   writeFileSync(html, card(content, locale));
   await page.goto(`file://${html}`);
   await page.evaluate(() => document.fonts.ready);
-  await page.screenshot({ path: join(root, 'public/og', `${locale}.png`) });
-  console.log(`public/og/${locale}.png`);
+  // JPEG: a photo-heavy card is ~4x smaller than PNG, so link previews load fast.
+  await page.screenshot({ path: join(root, 'public/og', `${locale}.jpg`), type: 'jpeg', quality: 85 });
+  console.log(`public/og/${locale}.jpg`);
 }
 await browser.close();

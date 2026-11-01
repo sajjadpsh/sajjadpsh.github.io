@@ -4,12 +4,12 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --font-sans: 'Inter Variable', 'Vazirmatn Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-inter), var(--font-vazirmatn), ui-sans-serif, system-ui, sans-serif;
 }
 
 html:lang(fa),
 html:lang(ar) {
-  --font-sans: 'Vazirmatn Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-vazirmatn), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 }
 
 /* SplitText hides its heading until the letters are split. Only when JS runs (`js` class from the

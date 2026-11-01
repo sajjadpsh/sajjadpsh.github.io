@@ -19,6 +19,8 @@ test('toBlocks flattens visible sections in order', () => {
   const blocks = toBlocks(content, 'en');
   assert.deepEqual(blocks[0], { kind: 'name', text: 'Jane Q. Doe' });
   assert.deepEqual(blocks[2], { kind: 'para', text: 'Here | j@x.io | gh.com/j' });
+  assert.equal(toBlocks(content, 'en', 'https://jane.dev/')[2].text, 'Here | j@x.io | gh.com/j | https://jane.dev/');
+  assert.equal(toBlocks(content, 'en', 'gh.com/j/')[2].text, 'Here | j@x.io | gh.com/j'); // already listed
   assert.deepEqual(blocks.slice(5), [
     { kind: 'heading', text: 'EXPERIENCE' },
     { kind: 'entry', text: 'Dev — Acme', right: 'Nov 2024 – Present' },

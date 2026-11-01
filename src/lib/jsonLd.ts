@@ -67,7 +67,7 @@ export function buildJsonLd({ content, allContent, locale, locales, intl, siteUr
           addressLocality: profile.city ?? profile.location,
           addressCountry: profile.countryCode,
         },
-        alumniOf: degree && { '@type': 'EducationalOrganization', name: degree.org },
+        alumniOf: degree && { '@type': 'CollegeOrUniversity', name: degree.org },
         knowsAbout: nonEmpty(knowsAbout),
         knowsLanguage: nonEmpty(
           (profile.languageCodes ?? []).map((code) => ({

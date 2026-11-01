@@ -1,24 +1,22 @@
 import type { Metadata } from 'next';
-import '@fontsource-variable/inter';
-import '@fontsource-variable/vazirmatn';
 import '@/app/globals.css';
 import { getContent, localeInfo, localePath, locales, defaultLocale, type Locale } from '@/lib/i18n';
 import { BASE_PATH, GOOGLE_SITE_VERIFICATION, SITE_URL } from '@/lib/site';
 import { buildJsonLd } from '@/lib/jsonLd';
 import { themeScript } from './ThemeToggle';
+import { inter, vazirmatn } from './fonts';
 import Header from './Header';
 import Hero from './Hero';
 import Section from './Sections';
 import Footer from './Footer';
 import ResumeDownload from './ResumeDownload';
-import SmoothScroll from './SmoothScroll';
-import Animations from './Animations';
+import Motion from './Motion';
 
 const pageUrl = (locale: Locale) => `${SITE_URL}${localePath(locale)}`;
 
 export function localeMetadata(locale: Locale): Metadata {
   const { meta, profile } = getContent(locale);
-  const image = { url: `${SITE_URL}/og/${locale}.png`, width: 1200, height: 630, alt: meta.title }; // npm run og
+  const image = { url: `${SITE_URL}/og/${locale}.jpg`, width: 1200, height: 630, alt: meta.title }; // npm run og
   return {
     metadataBase: new URL(SITE_URL),
     title: meta.title,
@@ -65,7 +63,7 @@ export default function LocalePage({ locale }: { locale: Locale }) {
   });
 
   return (
-    <html lang={locale} dir={info.dir} suppressHydrationWarning>
+    <html lang={locale} dir={info.dir} className={`${inter.variable} ${vazirmatn.variable}`} suppressHydrationWarning>
       <body className="bg-white text-zinc-900 antialiased dark:bg-zinc-950 dark:text-zinc-100">
         {/* First in <body>, not <head>: still runs before paint, without tripping hydration (React #418). */}
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
@@ -88,6 +86,8 @@ export default function LocalePage({ locale }: { locale: Locale }) {
               rtl={info.dir === 'rtl'}
               pdfHref={`${BASE_PATH}/resume/${pdfLocale}.pdf`}
               fileName={`${(pdf.resumeName || pdf.name).replace(/\s+/g, '_')}_Resume`}
+              pdfLang={pdfLocale}
+              pdfNote={pdfLocale === locale ? undefined : new Intl.DisplayNames([info.intl], { type: 'language' }).of(pdfLocale)}
             />
           </Hero>
           {sections.map((s) => (
@@ -95,8 +95,7 @@ export default function LocalePage({ locale }: { locale: Locale }) {
           ))}
         </main>
         <Footer profile={profile} ui={ui} />
-        <SmoothScroll backToTop={ui.backToTop} />
-        <Animations />
+        <Motion backToTop={ui.backToTop} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }} />
       </body>
     </html>

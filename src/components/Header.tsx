@@ -33,7 +33,7 @@ function Menu({ label, icon, children }: { label: string; icon: ReactNode; child
   );
 }
 
-const itemClass = 'rounded-lg px-3 py-2 text-sm hover:bg-black/5 dark:hover:bg-white/10';
+const itemClass = 'flex min-h-11 items-center whitespace-nowrap rounded-lg px-3 text-sm hover:bg-black/5 dark:hover:bg-white/10';
 
 export default function Header({ locale, name, nav, ui }: { locale: Locale; name: string; nav: NavItem[]; ui: Ui }) {
   return (
@@ -41,7 +41,7 @@ export default function Header({ locale, name, nav, ui }: { locale: Locale; name
       <div className="mx-auto flex h-16 max-w-6xl items-center gap-4 px-4 sm:px-6">
         <a href={`${BASE_PATH}${localePath(locale)}`} data-scroll-top aria-label={name} className="flex items-center gap-2 font-semibold">
           <Logo className="size-8" id="logo-header" />
-          <span className="hidden sm:inline">{name}</span>
+          <span className="hidden lg:inline">{name}</span>
         </a>
         <nav className="ms-auto hidden items-center gap-1 md:flex">
           {nav.map((s) => (
@@ -51,7 +51,7 @@ export default function Header({ locale, name, nav, ui }: { locale: Locale; name
           ))}
         </nav>
         <div className="ms-auto flex items-center gap-1 md:ms-2">
-          <Menu label={ui.language} icon={
+          <Menu label={`${ui.language} (${locale.toUpperCase()})`} icon={
               <span className="flex items-center gap-1 text-xs font-bold uppercase">
                 <svg viewBox="0 0 24 24" className="size-4" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
                   <circle cx="12" cy="12" r="9" />
